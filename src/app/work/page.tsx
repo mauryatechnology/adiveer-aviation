@@ -54,10 +54,16 @@ export default function WorkPage() {
                 <motion.div
                   key={p.name}
                   layout
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.95 }}
-                  transition={{ duration: 0.4, delay: i * 0.05 }}
+                  transition={{ 
+                    duration: 0.5, 
+                    delay: i * 0.05,
+                    type: "spring",
+                    damping: 25,
+                    stiffness: 120
+                  }}
                   className="bg-card rounded-3xl p-8 border border-border shadow-sm hover:shadow-2xl hover:border-primary/20 transition-all duration-300 group flex flex-col h-full"
                 >
                   <div className="flex items-start justify-between mb-8">

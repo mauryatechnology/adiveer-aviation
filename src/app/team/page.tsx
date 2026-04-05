@@ -20,10 +20,16 @@ export default function TeamPage() {
             {leadership.map((l, i) => (
               <motion.div
                 key={l.name}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1, duration: 0.6 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ 
+                  delay: i * 0.1, 
+                  duration: 0.7,
+                  type: "spring",
+                  damping: 25,
+                  stiffness: 100
+                 }}
                 className="bg-card rounded-3xl p-10 border border-border/60 hover:border-primary/30 hover:shadow-2xl transition-all duration-500 group text-center"
               >
                 <div className="relative w-40 h-40 mx-auto mb-8">
@@ -67,8 +73,14 @@ export default function TeamPage() {
                 key={m.name}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.05 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ 
+                  delay: i * 0.05, 
+                  duration: 0.6,
+                  type: "spring",
+                  damping: 25,
+                  stiffness: 120
+                 }}
                 className="bg-background rounded-2xl p-8 border border-border/60 hover:border-primary/20 hover:shadow-xl transition-all duration-300 group"
               >
                 <h3 className="font-heading font-black text-2xl text-foreground group-hover:text-primary transition-colors tracking-tight mb-1">{m.name}</h3>
@@ -95,10 +107,15 @@ export default function TeamPage() {
             {["Hack Days", "Open Source", "Field Trips", "Tech Talks"].map((item, i) => (
               <motion.div
                 key={item}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ 
+                  delay: i * 0.1,
+                  type: "spring",
+                  damping: 20,
+                  stiffness: 150
+                 }}
                 className="p-6 bg-card rounded-2xl border border-border/60 hover:bg-primary/5 hover:border-primary/20 hover:shadow-lg transition-all duration-300 group"
               >
                 <span className="text-sm font-heading font-black uppercase tracking-[0.2em] text-foreground group-hover:text-primary transition-colors">{item}</span>

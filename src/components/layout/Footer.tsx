@@ -25,10 +25,10 @@ export function Footer() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12"
+          className="grid grid-cols-2 lg:grid-cols-5 gap-y-12 gap-x-8"
         >
-          {/* Brand */}
-          <motion.div custom={0} variants={footerFade} className="lg:col-span-2">
+          {/* Brand & Address */}
+          <motion.div custom={0} variants={footerFade} className="col-span-full lg:col-span-2">
             <div className="flex items-center gap-3 mb-6">
               <Image 
                 src={logo} 
@@ -41,9 +41,20 @@ export function Footer() {
                 {siteConfig.name.split(' ')[0]}<span className="text-primary"> {siteConfig.name.split(' ')[1]}</span>
               </span>
             </div>
-            <p className="text-muted-foreground text-sm leading-relaxed max-w-sm">
-              {siteConfig.description}
-            </p>
+            
+            <div className="space-y-4">
+              <p className="text-muted-foreground text-sm leading-relaxed max-w-sm">
+                {siteConfig.description}
+              </p>
+              <div className="pt-2">
+                <p className="text-xs font-black uppercase tracking-widest text-primary mb-2">Headquarters</p>
+                <p className="text-sm text-foreground/80 leading-relaxed font-medium">
+                  1, Adi Parisar, Bagsewaniya,<br />
+                  Bhopal, Madhya Pradesh 462026, India
+                </p>
+              </div>
+            </div>
+
             <div className="mt-8 flex items-center gap-6 text-sm font-medium text-foreground/80">
               <div className="flex items-center gap-2">
                 <span className="text-primary font-bold">50+</span>
@@ -57,7 +68,7 @@ export function Footer() {
           </motion.div>
 
           {/* Company Links */}
-          <motion.div custom={1} variants={footerFade}>
+          <motion.div custom={1} variants={footerFade} className="col-span-1">
             <h4 className="font-heading font-semibold text-xs uppercase tracking-[0.2em] text-primary mb-6">Company</h4>
             <ul className="space-y-3">
               {siteConfig.mainNav.find(n => n.title === "About")?.items?.map((item) => (
@@ -76,7 +87,7 @@ export function Footer() {
           </motion.div>
 
           {/* Verticals */}
-          <motion.div custom={2} variants={footerFade}>
+          <motion.div custom={2} variants={footerFade} className="col-span-1">
             <h4 className="font-heading font-semibold text-xs uppercase tracking-[0.2em] text-primary mb-6">Verticals</h4>
             <ul className="space-y-3">
               {siteConfig.mainNav.find(n => n.title === "Products & Services")?.items?.slice(0, 5).map((item) => (
@@ -93,7 +104,7 @@ export function Footer() {
           </motion.div>
 
           {/* Connect */}
-          <motion.div custom={3} variants={footerFade}>
+          <motion.div custom={3} variants={footerFade} className="col-span-full md:col-span-1">
             <h4 className="font-heading font-semibold text-xs uppercase tracking-[0.2em] text-primary mb-6">Connect</h4>
             <ul className="space-y-3">
               <li><Link href="/contact" className="text-sm text-muted-foreground hover:text-primary transition-colors inline-block">Contact Us</Link></li>

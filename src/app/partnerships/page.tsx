@@ -27,10 +27,16 @@ export default function PartnershipsPage() {
             {industries.map((ind, i) => (
               <motion.div 
                 key={ind.title} 
-                initial={{ opacity: 0, y: 30 }} 
+                initial={{ opacity: 0, y: 20 }} 
                 whileInView={{ opacity: 1, y: 0 }} 
-                viewport={{ once: true }} 
-                transition={{ delay: i * 0.1, duration: 0.5 }} 
+                viewport={{ once: true, margin: "-50px" }} 
+                transition={{ 
+                  delay: i * 0.1, 
+                  duration: 0.6,
+                  type: "spring",
+                  damping: 30,
+                  stiffness: 100
+                 }} 
                 className="bg-card rounded-3xl p-10 border border-border/60 hover:border-primary/30 hover:shadow-2xl transition-all duration-500 group flex flex-col items-center text-center"
               >
                 <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-8 group-hover:bg-primary transition-colors duration-500 shadow-inner">
@@ -51,10 +57,16 @@ export default function PartnershipsPage() {
             {partnershipModels.map((m, i) => (
               <motion.div 
                 key={m.title} 
-                initial={{ opacity: 0, scale: 0.95 }} 
-                whileInView={{ opacity: 1, scale: 1 }} 
-                viewport={{ once: true }} 
-                transition={{ delay: i * 0.1, duration: 0.5 }} 
+                initial={{ opacity: 0, y: 20 }} 
+                whileInView={{ opacity: 1, y: 0 }} 
+                viewport={{ once: true, margin: "-50px" }} 
+                transition={{ 
+                  delay: i * 0.05, 
+                  duration: 0.6,
+                  type: "spring",
+                  damping: 25,
+                  stiffness: 120
+                 }} 
                 className="bg-background rounded-3xl p-10 border border-border/60 hover:border-primary/20 transition-all duration-300 group shadow-sm hover:shadow-xl"
               >
                 <div className="flex flex-col gap-4">
