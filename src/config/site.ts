@@ -67,7 +67,6 @@ export const siteConfig = {
         { title: "Case Studies", href: "/insights#case-studies" },
       ],
     },
-    { title: "Careers", href: "/careers" },
   ],
 };
 

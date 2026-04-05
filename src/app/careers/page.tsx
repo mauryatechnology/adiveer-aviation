@@ -25,23 +25,23 @@ const perks = [
 export default function CareersPage() {
   return (
     <>
-      <PageHero 
-        tag="Careers" 
-        title="Build What Matters" 
-        description="Join a team of engineers, scientists, and operators solving civilization-scale problems with technology." 
+      <PageHero
+        tag="Careers"
+        title="Build What Matters"
+        description="Join a team of engineers, scientists, and operators solving civilization-scale problems with technology."
       />
-      
+
       <section className="py-24">
         <div className="container mx-auto px-6">
           <SectionHeading tag="Open Positions" title="Current Openings" />
           <div className="grid gap-6 max-w-5xl mx-auto">
             {roles.map((r, i) => (
-              <motion.div 
-                key={r.title} 
-                initial={{ opacity: 0, y: 20 }} 
-                whileInView={{ opacity: 1, y: 0 }} 
-                viewport={{ once: true }} 
-                transition={{ delay: i * 0.05 }} 
+              <motion.div
+                key={r.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.05 }}
                 className="bg-card rounded-2xl p-8 border border-border/60 hover:border-primary/30 hover:shadow-xl transition-all duration-300 flex flex-col md:flex-row md:items-center justify-between gap-6 cursor-pointer group"
               >
                 <div className="flex-1">
@@ -70,8 +70,8 @@ export default function CareersPage() {
           <SectionHeading tag="Why Join Us" title="Life at AdiVeer" />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
             {perks.map((p, i) => (
-              <motion.div 
-                key={p} 
+              <motion.div
+                key={p}
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
@@ -85,8 +85,8 @@ export default function CareersPage() {
               </motion.div>
             ))}
           </div>
-          
-          <motion.div 
+
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -96,8 +96,8 @@ export default function CareersPage() {
             <p className="text-primary-foreground/80 text-lg mb-8 max-w-xl mx-auto">
               We're always looking for brilliant minds. Send us your CV and we'll keep you in mind for future roles.
             </p>
-            <Link 
-              href="mailto:careers@adiveer-aviations.com" 
+            <Link
+              href="mailto:careers@adiveer-aviations.com"
               className="px-10 py-5 bg-primary-foreground text-primary font-heading font-black uppercase tracking-wider rounded-2xl hover:bg-white transition-all inline-flex items-center gap-3 group text-lg"
             >
               Send Your CV <ArrowRight className="w-6 h-6 transition-transform group-hover:translate-x-1" />
