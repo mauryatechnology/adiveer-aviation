@@ -56,20 +56,22 @@ export function Footer() {
             </div>
           </motion.div>
 
-          {/* Quick Links - We can derive these from siteConfig if needed, but manual grouping often looks better for footers */}
+          {/* Company Links */}
           <motion.div custom={1} variants={footerFade}>
             <h4 className="font-heading font-semibold text-xs uppercase tracking-[0.2em] text-primary mb-6">Company</h4>
             <ul className="space-y-3">
-              {["Our Story", "Vision & Mission", "Core Values", "Team", "Careers"].map((item) => (
-                <li key={item}>
+              {siteConfig.mainNav.find(n => n.title === "About")?.items?.map((item) => (
+                <li key={item.title}>
                   <Link 
-                    href={item === "Careers" ? "/careers" : item === "Team" ? "/team" : `/about#${item.toLowerCase().replace(/ & /g, '-').replace(/ /g, '-')}`} 
+                    href={item.href} 
                     className="text-sm text-muted-foreground hover:text-primary transition-colors inline-block"
                   >
-                    {item}
+                    {item.title}
                   </Link>
                 </li>
               ))}
+              <li><Link href="/team" className="text-sm text-muted-foreground hover:text-primary transition-colors inline-block">Team</Link></li>
+              <li><Link href="/careers" className="text-sm text-muted-foreground hover:text-primary transition-colors inline-block">Careers</Link></li>
             </ul>
           </motion.div>
 
@@ -77,13 +79,13 @@ export function Footer() {
           <motion.div custom={2} variants={footerFade}>
             <h4 className="font-heading font-semibold text-xs uppercase tracking-[0.2em] text-primary mb-6">Verticals</h4>
             <ul className="space-y-3">
-              {["Aerospace & Drones", "AI Systems", "Robotics", "Defense", "Environmental"].map((item) => (
-                <li key={item}>
+              {siteConfig.mainNav.find(n => n.title === "Products & Services")?.items?.slice(0, 5).map((item) => (
+                <li key={item.title}>
                   <Link 
-                    href="/products" 
+                    href={item.href} 
                     className="text-sm text-muted-foreground hover:text-primary transition-colors inline-block"
                   >
-                    {item}
+                    {item.title}
                   </Link>
                 </li>
               ))}
@@ -96,8 +98,16 @@ export function Footer() {
             <ul className="space-y-3">
               <li><Link href="/contact" className="text-sm text-muted-foreground hover:text-primary transition-colors inline-block">Contact Us</Link></li>
               <li><Link href="/partnerships" className="text-sm text-muted-foreground hover:text-primary transition-colors inline-block">Partnerships</Link></li>
-              <li><Link href="/insights#blog" className="text-sm text-muted-foreground hover:text-primary transition-colors inline-block">Blog / News</Link></li>
-              <li><Link href="/insights#reports" className="text-sm text-muted-foreground hover:text-primary transition-colors inline-block">Research</Link></li>
+              {siteConfig.mainNav.find(n => n.title === "Insights")?.items?.slice(0, 2).map((item) => (
+                <li key={item.title}>
+                  <Link 
+                    href={item.href} 
+                    className="text-sm text-muted-foreground hover:text-primary transition-colors inline-block"
+                  >
+                    {item.title}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </motion.div>
         </motion.div>

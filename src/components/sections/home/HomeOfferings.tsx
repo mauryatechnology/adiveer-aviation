@@ -5,12 +5,7 @@ import SectionHeading from "@/components/common/SectionHeading";
 import StaggerContainer, { staggerItem } from "@/components/animations/StaggerContainer";
 import ParallaxSection from "@/components/animations/ParallaxSection";
 
-const offerings = [
-  { num: "01", title: "R&D & Prototyping", desc: "Rapid ideation and engineering cycles turning concepts into working prototypes in weeks." },
-  { num: "02", title: "Systems Integration", desc: "Combining hardware, AI, sensors, and communication systems into unified solutions." },
-  { num: "03", title: "Field Deployment", desc: "Real-world deployment in extreme environments (borders, coastal zones, etc.)." },
-  { num: "04", title: "Training & Consulting", desc: "Upskilling teams in drones, AI, and autonomous systems." },
-];
+import { homeOfferings as offerings } from "@/data/home";
 
 export function HomeOfferings() {
   return (

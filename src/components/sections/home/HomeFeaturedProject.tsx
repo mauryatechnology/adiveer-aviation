@@ -7,6 +7,8 @@ import SectionHeading from "@/components/common/SectionHeading";
 import MagneticButton from "@/components/animations/MagneticButton";
 import CountUp from "@/components/animations/CountUp";
 
+import { featuredProject as project } from "@/data/home";
+
 export function HomeFeaturedProject() {
   return (
     <section className="py-24 bg-background relative overflow-hidden">
@@ -34,32 +36,30 @@ export function HomeFeaturedProject() {
               transition={{ delay: 0.3 }}
               className="inline-block px-3 py-1 text-xs font-heading font-black uppercase tracking-[0.2em] text-primary border border-primary/20 rounded-full mb-6"
             >
-              Aerospace
+              {project.category}
             </motion.span>
-            <h3 className="font-heading font-black text-3xl md:text-5xl text-foreground mt-2 mb-6 tracking-tight leading-tight">Project Aether</h3>
+            <h3 className="font-heading font-black text-3xl md:text-5xl text-foreground mt-2 mb-6 tracking-tight leading-tight">{project.name}</h3>
             <p className="text-muted-foreground text-lg md:text-xl leading-relaxed mb-8 max-w-2xl font-light">
-              A high-altitude autonomous surveillance drone for border monitoring, designed for extreme durability and real-time AI processing at the edge.
+              {project.desc}
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-10">
               <div className="space-y-2">
                 <span className="text-xs font-heading font-bold uppercase tracking-[0.2em] text-primary/70">Technology Stack</span>
                 <p className="text-base text-foreground font-medium leading-relaxed">
-                  Custom carbon-fiber frame · Solar-hybrid power · Edge AI · Encrypted MAVLink communication
+                  {project.tech}
                 </p>
               </div>
               <div className="flex gap-10">
-                <div className="space-y-1">
-                  <CountUp value="500+" className="text-3xl md:text-4xl font-heading font-black text-primary" />
-                  <div className="text-xs uppercase tracking-wider text-muted-foreground font-bold">Terrain Monitored (KM)</div>
-                </div>
-                <div className="space-y-1">
-                  <div className="flex items-baseline">
-                    <CountUp value="72" className="text-3xl md:text-4xl font-heading font-black text-primary" />
-                    <span className="text-2xl font-heading font-bold text-primary ml-1">h</span>
+                {project.metrics.map((m, idx) => (
+                  <div key={idx} className="space-y-1">
+                    <div className="flex items-baseline">
+                      <CountUp value={m.value} className="text-3xl md:text-4xl font-heading font-black text-primary" />
+                      {m.unit && <span className="text-2xl font-heading font-bold text-primary ml-1">{m.unit}</span>}
+                    </div>
+                    <div className="text-xs uppercase tracking-wider text-muted-foreground font-bold">{m.label}</div>
                   </div>
-                  <div className="text-xs uppercase tracking-wider text-muted-foreground font-bold">Continuous Flight</div>
-                </div>
+                ))}
               </div>
             </div>
             

@@ -5,12 +5,7 @@ import { Zap, Globe, Wrench, Target } from "lucide-react";
 import SectionHeading from "@/components/common/SectionHeading";
 import StaggerContainer, { staggerItem } from "@/components/animations/StaggerContainer";
 
-const whyUs = [
-  { icon: Zap, title: "Deep Engineering DNA", desc: "We build proprietary tech from scratch — hardware + software." },
-  { icon: Globe, title: "India-Born, Global Mindset", desc: "Designed for India's challenges, scalable globally." },
-  { icon: Wrench, title: "End-to-End Execution", desc: "We design, build, and deploy — full control over performance and security." },
-  { icon: Target, title: "Mission-Driven Innovation", desc: "We solve real-world, high-impact problems — not just theoretical tech." },
-];
+import { whyUs } from "@/data/home";
 
 export function HomeWhyUs() {
   return (

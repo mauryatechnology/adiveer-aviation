@@ -6,6 +6,8 @@ import { motion } from "framer-motion";
 import { MapPin, Mail, Phone, Send, CheckCircle2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
+import { contactDetails, inquiryTypes } from "@/data/contact";
+
 export default function ContactPage() {
   const [form, setForm] = useState({ name: "", email: "", org: "", subject: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
@@ -100,11 +102,9 @@ export default function ContactPage() {
                       className="w-full px-5 py-4 bg-background border border-border rounded-xl text-foreground text-base focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all outline-none appearance-none"
                     >
                       <option value="">Select a topic</option>
-                      <option>Partnership Inquiry</option>
-                      <option>Custom Solution Request</option>
-                      <option>Career Opportunities</option>
-                      <option>Media & Press</option>
-                      <option>General Inquiry</option>
+                      {inquiryTypes.map((type) => (
+                        <option key={type}>{type}</option>
+                      ))}
                     </select>
                   </div>
                   <div className="space-y-2">
@@ -148,11 +148,7 @@ export default function ContactPage() {
               </div>
               
               <div className="space-y-6">
-                {[
-                  { icon: MapPin, title: "Headquarters", content: "Bangalore, Karnataka, India", sub: "Silicon Valley of the East" },
-                  { icon: Mail, title: "Operations & Sales", content: "hello@adiveeraviations.com", sub: "24/7 Monitoring" },
-                  { icon: Phone, title: "Support Line", content: "+91 (0) 80-2234-XXXX", sub: "Mon-Sat, 9AM-8PM IST" }
-                ].map((item, i) => (
+                {contactDetails.map((item, i) => (
                   <motion.div 
                     key={item.title}
                     initial={{ opacity: 0, y: 10 }}

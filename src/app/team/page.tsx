@@ -3,47 +3,7 @@ import SectionHeading from "@/components/common/SectionHeading";
 import * as motion from "framer-motion/client";
 import { Linkedin, Github, Twitter } from "lucide-react";
 
-const leadership = [
-  {
-    name: "Mr. Aditya Shrivastava",
-    role: "President & Founder",
-    image: "/addityaPresident.png",
-    desc: "With over 15 years of industry expertise, Aditya drives YantraQ's growth through innovative partnerships and ethical governance, ensuring the company remains at the forefront of technological advancements while consistently fostering a strong culture of team excellence and operational sustainability."
-  },
-  // {
-  //   name: "Co-Founder & CTO",
-  //   role: "Chief Technology Officer",
-  //   desc: "AI and robotics expert leading the company's technology strategy and R&D initiatives."
-  // },
-];
-
-const coreTeam = [
-  {
-    name: "Abhinav Pavithran",
-    role: "Chief of AI",
-    desc: "Leading AI initiatives and driving innovation in machine learning and intelligent systems."
-  },
-  {
-    name: "Siddhant Shaw",
-    role: "Chief of Robotics",
-    desc: "Overseeing robotics engineering and building advanced autonomous systems."
-  },
-  {
-    name: "Shantanu Dubey",
-    role: "Head of Backend",
-    desc: "Managing backend architecture, APIs, and ensuring scalable server-side systems."
-  },
-  {
-    name: "Kuldeep Maurya",
-    role: "Full Stack Developer",
-    desc: "Developing end-to-end web applications with both frontend and backend expertise."
-  },
-  {
-    name: "Navneet Kaur",
-    role: "HR Head",
-    desc: "Handling human resources, recruitment, and team management operations."
-  }
-];
+import { leadership, coreTeam } from "@/data/team";
 export default function TeamPage() {
   return (
     <>

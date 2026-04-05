@@ -5,20 +5,7 @@ import { Building2, Shield, Leaf, Landmark, Factory, ArrowRight, Handshake } fro
 import Link from "next/link";
 import MagneticButton from "@/components/animations/MagneticButton";
 
-const industries = [
-  { icon: Shield, title: "Defense & Security", desc: "Armed forces, border security agencies, and intelligence organizations." },
-  { icon: Landmark, title: "Government & Public Sector", desc: "Smart city initiatives, disaster management, and public infrastructure monitoring." },
-  { icon: Leaf, title: "Environment & Conservation", desc: "Wildlife protection, forest monitoring, and environmental compliance." },
-  { icon: Factory, title: "Industrial & Manufacturing", desc: "Automation, quality assurance, and predictive maintenance solutions." },
-  { icon: Building2, title: "Infrastructure", desc: "Inspection, surveying, and monitoring for energy, transport, and construction." },
-];
-
-const partnershipModels = [
-  { title: "Technology Partnership", desc: "Co-develop and deploy deep-tech solutions combining your domain expertise with our engineering capabilities." },
-  { title: "System Integration", desc: "Integrate our autonomous platforms, AI systems, or sensor networks into your existing infrastructure." },
-  { title: "Research Collaboration", desc: "Joint R&D programs with academic institutions, defense labs, and industry research centers." },
-  { title: "Channel Partnership", desc: "Distribute and deploy AdiVeer solutions in your geography or sector." },
-];
+import { industries, partnershipModels, partnerTypes } from "@/data/partnerships";
 
 export default function PartnershipsPage() {
   return (
@@ -109,11 +96,9 @@ export default function PartnershipsPage() {
                We're building an international network of technology partners and ecosystem catalysts. Join the vanguard of the deep-tech revolution.
              </p>
              <div className="flex flex-wrap justify-center gap-12 opacity-30 grayscale hover:grayscale-0 transition-all duration-700">
-               {/* Dummy Partner Types */}
-               <span className="text-sm font-black uppercase tracking-widest text-primary-foreground">Government Agencies</span>
-               <span className="text-sm font-black uppercase tracking-widest text-primary-foreground">Global OEMS</span>
-               <span className="text-sm font-black uppercase tracking-widest text-primary-foreground">Silicon Partners</span>
-               <span className="text-sm font-black uppercase tracking-widest text-primary-foreground">Research Labs</span>
+               {partnerTypes.map((partner) => (
+                 <span key={partner} className="text-sm font-black uppercase tracking-widest text-primary-foreground">{partner}</span>
+               ))}
              </div>
            </motion.div>
         </div>

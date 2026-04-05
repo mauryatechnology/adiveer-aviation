@@ -9,6 +9,8 @@ import heroDrone from "@/assets/hero-drone.jpg";
 import MagneticButton from "@/components/animations/MagneticButton";
 import CountUp from "@/components/animations/CountUp";
 
+import { heroHeadline, heroStats as stats } from "@/data/home";
+
 const heroWordVariants = {
   hidden: { opacity: 0, y: 30, filter: "blur(6px)" },
   visible: (i: number) => ({
@@ -19,13 +21,6 @@ const heroWordVariants = {
   }),
 };
 
-const stats = [
-  { value: "50+", label: "Deployed Systems" },
-  { value: "6", label: "Tech Verticals" },
-  { value: "200,000+", label: "Hours of Engineering" },
-  { value: "#1", label: "India's Deep Tech Vanguard" },
-];
-
 export function HomeHero() {
   const heroRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({ target: heroRef, offset: ["start start", "end start"] });
@@ -34,8 +29,6 @@ export function HomeHero() {
   const heroOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
   const heroImgY = useTransform(scrollYProgress, [0, 1], [0, -80]);
   const heroImgScale = useTransform(scrollYProgress, [0, 1], [1, 1.15]);
-
-  const headlineWords = ["We", "Build", "What", "Others"];
 
   return (
     <section ref={heroRef} className="relative min-h-screen flex items-center overflow-hidden">
@@ -69,11 +62,11 @@ export function HomeHero() {
             transition={{ delay: 0.2, type: "spring", stiffness: 100 }}
             className="inline-block px-4 py-1.5 text-xs font-heading font-semibold uppercase tracking-[0.2em] text-primary border border-primary/30 rounded-full mb-8 bg-primary/5 backdrop-blur-sm"
           >
-            India's Deep Tech Vanguard
+            {heroHeadline.tag}
           </motion.span>
 
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-heading font-bold leading-[1.1] text-foreground mb-6">
-            {headlineWords.map((word, i) => (
+            {heroHeadline.words.map((word, i) => (
               <motion.span
                 key={word}
                 custom={i}
@@ -91,7 +84,7 @@ export function HomeHero() {
               transition={{ delay: 0.9, type: "spring", damping: 15 }}
               className="inline-block text-primary"
             >
-              Only Imagine.
+              {heroHeadline.highlight}
             </motion.span>
           </h1>
 
@@ -101,7 +94,7 @@ export function HomeHero() {
             transition={{ delay: 1.1, duration: 0.6 }}
             className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl mb-10"
           >
-            From autonomous drones to AI-driven defense systems, Adiveer Aviations engineers the technologies that shape tomorrow's world. India-born. Globally deployed.
+            {heroHeadline.description}
           </motion.p>
 
           <motion.div

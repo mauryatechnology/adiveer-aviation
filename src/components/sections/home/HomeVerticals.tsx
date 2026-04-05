@@ -5,14 +5,9 @@ import { Plane, Brain, Bot, Shield, Leaf, Cog } from "lucide-react";
 import SectionHeading from "@/components/common/SectionHeading";
 import StaggerContainer, { staggerItem } from "@/components/animations/StaggerContainer";
 
-const verticals = [
-  { icon: Plane, title: "Aerospace & Drone Systems", desc: "Next-generation UAVs engineered for extreme endurance, precision navigation, and payload versatility across civilian and defense use cases." },
-  { icon: Brain, title: "AI & Automation", desc: "Machine intelligence systems that transform raw sensor data into autonomous real-time decision-making at the edge — no cloud required." },
-  { icon: Bot, title: "Robotics & Autonomous Systems", desc: "Unmanned ground and aerial vehicles engineered for complex, dangerous, and inaccessible environments." },
-  { icon: Shield, title: "Defense & Surveillance", desc: "Secure, rapidly deployable technologies for national security, border protection, and surveillance operations." },
-  { icon: Leaf, title: "Environmental Technologies", desc: "Solutions for climate monitoring, afforestation tracking, pollution mapping, and environmental intervention." },
-  { icon: Cog, title: "Advanced Manufacturing & Education", desc: "Rapid prototyping, 3D printing, and industry-ready training programs bridging research and deployment." },
-];
+import { services } from "@/data/services";
+
+const verticals = services.slice(0, 6);
 
 export function HomeVerticals() {
   return (

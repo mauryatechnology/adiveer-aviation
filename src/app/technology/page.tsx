@@ -1,13 +1,7 @@
 import PageHero from "@/components/common/PageHero";
 import * as motion from "framer-motion/client";
-import { Brain, Cpu, Cog, CircuitBoard, CheckCircle2 } from "lucide-react";
-
-const stacks = [
-  { id: "ai-ml", icon: Brain, title: "AI/ML Stack", desc: "Custom neural networks, edge inference engines, computer vision pipelines, and reinforcement learning systems.", techs: ["TensorFlow / PyTorch", "Edge TPU / NVIDIA Jetson", "Custom ONNX models", "Real-time inference", "Federated learning", "Sensor fusion AI"] },
-  { id: "robotics", icon: Cpu, title: "Robotics Platform", desc: "Full-stack robotics framework: perception, planning, control, and actuation for autonomous machines.", techs: ["ROS2 framework", "SLAM navigation", "Motion planning", "Force/torque control", "Computer vision", "Autonomous behavior"] },
-  { id: "manufacturing", icon: Cog, title: "Manufacturing Tech", desc: "Advanced manufacturing capabilities including rapid prototyping, 3D printing, and precision engineering.", techs: ["3D metal printing", "CNC machining", "Composite fabrication", "PCB design & fab", "Quality assurance", "Rapid prototyping"] },
-  { id: "hardware", icon: CircuitBoard, title: "Hardware Integration", desc: "End-to-end hardware design — from PCB layout to ruggedized enclosures for field deployment.", techs: ["Custom PCB design", "Power management", "RF & antenna design", "Thermal management", "Ruggedized housing", "EMC compliance"] },
-];
+import { CheckCircle2 } from "lucide-react";
+import { techStacks, rdLabs } from "@/data/technology";
 
 export default function TechnologyPage() {
   return (
@@ -25,7 +19,7 @@ export default function TechnologyPage() {
         
         <div className="container mx-auto px-6 relative z-10">
           <div className="space-y-12 max-w-6xl mx-auto">
-            {stacks.map((s, i) => (
+            {techStacks.map((s, i) => (
               <motion.div 
                 key={s.title} 
                 id={s.id} 
@@ -89,7 +83,7 @@ export default function TechnologyPage() {
                 Our technology is forged in state-of-the-art labs equipped with high-speed prototyping, EMI/EMC testing, and flight simulation suites.
               </p>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
-                 {["Silion Fab", "Flight Test Range", "AI Compute Cluster", "RF Testing"].map((lab) => (
+                 {rdLabs.map((lab) => (
                    <div key={lab} className="space-y-2">
                       <div className="h-2 bg-primary-foreground/20 rounded-full overflow-hidden">
                         <motion.div 
