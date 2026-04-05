@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 192 52% 93%;
+    --foreground: 0 0% 0%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+
+    --primary: 213 45% 21%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 192 52% 88%;
+    --secondary-foreground: 213 45% 21%;
+
+    --muted: 192 30% 90%;
+    --muted-foreground: 213 20% 40%;
+
+    --accent: 213 45% 21%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 213 20% 82%;
+    --input: 213 20% 82%;
+    --ring: 213 45% 21%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 0 0% 0%;
+    --sidebar-primary: 213 45% 21%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 192 52% 88%;
+    --sidebar-accent-foreground: 0 0% 0%;
+    --sidebar-border: 213 20% 82%;
+    --sidebar-ring: 213 45% 21%;
+
+    --navy: 213 45% 21%;
+    --electric-blue: 213 45% 21%;
+    --neon-cyan: 213 45% 30%;
+    --orange-gold: 213 45% 15%;
+    --glow-blue: 213 45% 21%;
+
+    --section-alt: 192 52% 93%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
+  }
+
+  .glow-blue {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.15), 0 0 60px hsl(var(--primary) / 0.05);
+  }
+
+  .glow-cyan {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.15);
+  }
+
+  .glow-orange {
+    box-shadow: 0 0 15px hsl(var(--primary) / 0.1);
+  }
+
+  .grid-overlay {
+    background-image: 
+      linear-gradient(hsl(var(--primary) / 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--primary) / 0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  .border-glow {
+    border: 1px solid hsl(var(--border));
+  }
+
+  .hover-glow {
+    @apply transition-all duration-300;
+  }
+
+  .hover-glow:hover {
+    border-color: hsl(var(--primary) / 0.4);
+    box-shadow: 0 4px 20px hsl(var(--primary) / 0.1);
+  }
+
+  .section-alt {
+    background-color: hsl(var(--section-alt));
+  }
+}
