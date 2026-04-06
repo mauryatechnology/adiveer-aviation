@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { Zap, Globe, Wrench, Target } from "lucide-react";
 import SectionHeading from "@/components/common/SectionHeading";
 import StaggerContainer, { staggerItem } from "@/components/animations/StaggerContainer";
@@ -38,6 +39,21 @@ export function HomeWhyUs() {
             </motion.div>
           ))}
         </StaggerContainer>
+
+        <motion.div
+           initial={{ opacity: 0, y: 30 }}
+           whileInView={{ opacity: 1, y: 0 }}
+           viewport={{ once: true }}
+           transition={{ delay: 0.6 }}
+           className="mt-16 text-center"
+        >
+          <Link 
+            href="/team"
+            className="inline-flex items-center gap-2 text-xs font-heading font-black uppercase tracking-[0.3em] text-primary hover:text-foreground transition-all group"
+          >
+            Meet the Engineering Team <div className="w-12 h-px bg-primary/30 group-hover:w-16 group-hover:bg-primary transition-all ml-2" />
+          </Link>
+        </motion.div>
       </div>
     </section>
   );
