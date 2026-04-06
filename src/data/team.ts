@@ -1,6 +1,6 @@
 import { TeamMember } from "@/types";
 
-export const leadership: TeamMember[] = [
+export const coreTeam: TeamMember[] = [
   {
     name: "Mr. Aditya Shrivastava",
     role: "President & Founder",
@@ -10,10 +10,7 @@ export const leadership: TeamMember[] = [
       linkedin: "https://linkedin.com/in/aditya",
       twitter: "https://twitter.com/aditya"
     }
-  }
-];
-
-export const coreTeam: TeamMember[] = [
+  },
   {
     name: "Abhinav Pavithran",
     role: "Chief of AI",
