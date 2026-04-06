@@ -34,28 +34,26 @@ export default async function WorkDetailLayout({
 
   return (
     <>
-      <head>
-        {project && (
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify([
-                BreadcrumbSchema([
-                  { name: "Home", item: "" },
-                  { name: "Work", item: "/work" },
-                  { name: project.name, item: `/work/${slug}` },
-                ]),
-                ArticleSchema({
-                  title: project.name,
-                  description: project.desc,
-                  url: `/work/${slug}`,
-                  datePublished: new Date().toISOString(), // Mocking date
-                })
+      {project && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify([
+              BreadcrumbSchema([
+                { name: "Home", item: "" },
+                { name: "Work", item: "/work" },
+                { name: project.name, item: `/work/${slug}` },
               ]),
-            }}
-          />
-        )}
-      </head>
+              ArticleSchema({
+                title: project.name,
+                description: project.desc,
+                url: `/work/${slug}`,
+                datePublished: new Date().toISOString(), // Mocking date
+              })
+            ]),
+          }}
+        />
+      )}
       {children}
     </>
   );

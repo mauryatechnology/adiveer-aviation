@@ -15,26 +15,24 @@ export const metadata = buildMetadata({
 export default function TeamPage() {
   return (
     <>
-      <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify([
-              BreadcrumbSchema([
-                { name: "Home", item: "" },
-                { name: "Team", item: "/team" },
-              ]),
-              ...coreTeam.map((member) =>
-                PersonSchema({
-                  name: member.name,
-                  jobTitle: member.role,
-                  url: member.links?.linkedin,
-                })
-              ),
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            BreadcrumbSchema([
+              { name: "Home", item: "" },
+              { name: "Team", item: "/team" },
             ]),
-          }}
-        />
-      </head>
+            ...coreTeam.map((member) =>
+              PersonSchema({
+                name: member.name,
+                jobTitle: member.role,
+                url: member.links?.linkedin,
+              })
+            ),
+          ]),
+        }}
+      />
       <PageHero
         tag="Team Adiveer"
         title="The Visionaries & Engineers"

@@ -35,27 +35,25 @@ export default async function ProductDetailLayout({
 
   return (
     <>
-      <head>
-        {product && (
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify([
-                BreadcrumbSchema([
-                  { name: "Home", item: "" },
-                  { name: "Products", item: "/products" },
-                  { name: product.title, item: `/products/${slug}` },
-                ]),
-                ProductSchema({
-                  name: product.title,
-                  description: product.desc,
-                  url: `/products/${slug}`,
-                }),
+      {product && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify([
+              BreadcrumbSchema([
+                { name: "Home", item: "" },
+                { name: "Products", item: "/products" },
+                { name: product.title, item: `/products/${slug}` },
               ]),
-            }}
-          />
-        )}
-      </head>
+              ProductSchema({
+                name: product.title,
+                description: product.desc,
+                url: `/products/${slug}`,
+              }),
+            ]),
+          }}
+        />
+      )}
       {children}
     </>
   );

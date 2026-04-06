@@ -42,13 +42,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
+      <body>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(OrganizationSchema()) }}
         />
-      </head>
-      <body className={`${inter.className} min-h-screen bg-background text-foreground antialiased`} suppressHydrationWarning>
         <Providers>
           <div className="relative flex min-h-screen flex-col">
             <Navbar />

@@ -34,28 +34,26 @@ export default async function TechnologyDetailLayout({
 
   return (
     <>
-      <head>
-        {tech && (
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify([
-                BreadcrumbSchema([
-                  { name: "Home", item: "" },
-                  { name: "Technology", item: "/technology" },
-                  { name: tech.title, item: `/technology/${slug}` },
-                ]),
-                ArticleSchema({
-                  title: tech.title,
-                  description: tech.desc,
-                  url: `/technology/${slug}`,
-                  datePublished: new Date().toISOString(),
-                })
+      {tech && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify([
+              BreadcrumbSchema([
+                { name: "Home", item: "" },
+                { name: "Technology", item: "/technology" },
+                { name: tech.title, item: `/technology/${slug}` },
               ]),
-            }}
-          />
-        )}
-      </head>
+              ArticleSchema({
+                title: tech.title,
+                description: tech.desc,
+                url: `/technology/${slug}`,
+                datePublished: new Date().toISOString(),
+              })
+            ]),
+          }}
+        />
+      )}
       {children}
     </>
   );
