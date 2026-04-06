@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, ChevronDown, MoveRight } from "lucide-react";
+import { Menu, X, ChevronDown, MoveRight, Landmark } from "lucide-react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "@/assets/logo.jpeg";
@@ -34,7 +34,7 @@ const NavDropdown = ({ item, isOpen, onToggle, onClose, scrolled, pathname }: Dr
           scrolled 
             ? "text-primary-foreground/75 hover:text-primary-foreground h-full" 
             : isActive 
-              ? "text-primary" 
+              ? "text-primary font-bold" 
               : "text-foreground/80 hover:text-primary"
         )}
       >
@@ -108,14 +108,14 @@ export function Navbar() {
         <Link href="/" className="flex items-center gap-3">
           <Image 
             src={logo} 
-            alt="AdiVeer Aviations" 
+            alt="Adiveer Aviation" 
             width={40} 
             height={40} 
             className="h-10 w-10 rounded-md object-cover" 
           />
           <span className="font-heading font-bold text-lg tracking-tight">
-            <span className={scrolled ? "text-primary-foreground" : "text-foreground"}>AdiVeer</span>
-            <span className={scrolled ? "text-primary-foreground/80" : "text-primary"}> Aviations</span>
+            <span className={scrolled ? "text-primary-foreground" : "text-foreground"}>Adiveer</span>
+            <span className={scrolled ? "text-primary-foreground/80" : "text-primary"}> Aviation</span>
           </span>
         </Link>
 
@@ -142,7 +142,7 @@ export function Navbar() {
                   scrolled 
                     ? "text-primary-foreground/80 hover:text-primary-foreground font-semibold" 
                     : isActive 
-                      ? "text-primary font-semibold" 
+                      ? "text-primary font-bold" 
                       : "text-foreground/80 hover:text-primary"
                 )}
                 aria-current={isActive ? "page" : undefined}
@@ -161,9 +161,21 @@ export function Navbar() {
 
         <div className="hidden lg:flex items-center gap-3">
           <Link 
+            href="/investors" 
+            className={cn(
+              "flex items-center gap-2 px-4 py-2.5 font-heading font-black text-[10px] uppercase tracking-widest rounded-lg transition-all",
+              scrolled 
+                ? "text-primary-foreground/90 hover:text-white border border-primary-foreground/30" 
+                : "text-primary hover:text-primary/80 border border-primary/20"
+            )}
+          >
+            <Landmark className="w-3.5 h-3.5" />
+            Investor Enquiry
+          </Link>
+          <Link 
             href="/contact" 
             className={cn(
-              "px-5 py-2.5 font-heading font-black text-xs uppercase tracking-widest rounded-lg transition-all",
+              "px-5 py-2.5 font-heading font-black text-[10px] uppercase tracking-widest rounded-lg transition-all",
               scrolled 
                 ? "bg-primary-foreground text-primary hover:bg-white" 
                 : "bg-primary text-primary-foreground hover:bg-primary/90 shadow-xl shadow-primary/20"
@@ -208,18 +220,18 @@ export function Navbar() {
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
-            className="lg:hidden fixed top-0 right-0 bottom-0 w-[75vw] md:w-[60vw] bg-background z-[100] border-l border-border shadow-2xl overflow-y-auto flex flex-col p-8"
+            className="lg:hidden fixed top-0 right-0 bottom-0 w-[85vw] md:w-[60vw] bg-background z-[100] border-l border-border shadow-2xl overflow-y-auto flex flex-col p-8"
           >
             <div className="flex items-center justify-between mb-12">
               <div className="flex items-center gap-3">
                 <Image 
                   src={logo} 
-                  alt="AdiVeer Aviations" 
+                  alt="Adiveer Aviation" 
                   width={32} 
                   height={32} 
                   className="rounded-md object-cover" 
                 />
-                <span className="font-heading font-black text-xl tracking-tight text-primary">AdiVeer</span>
+                <span className="font-heading font-black text-xl tracking-tight text-primary">Adiveer</span>
               </div>
               <button 
                 onClick={() => setMobileOpen(false)}
@@ -240,7 +252,7 @@ export function Navbar() {
                         <button
                           onClick={() => setOpenDropdown(openDropdown === item.title ? null : item.title)}
                           className={cn(
-                            "flex items-center justify-between w-full text-xl font-heading font-black py-4 transition-colors tracking-tight",
+                            "flex items-center justify-between w-full text-xl font-heading font-black py-4 transition-colors tracking-tight text-left",
                             openDropdown === item.title ? "text-primary" : "text-foreground"
                           )}
                         >
@@ -261,8 +273,8 @@ export function Navbar() {
                                     key={subItem.href} 
                                     href={subItem.href} 
                                     className={cn(
-                                      "block text-base font-medium transition-colors",
-                                      pathname === subItem.href ? "text-primary font-bold" : "text-muted-foreground hover:text-foreground"
+                                      "block text-lg font-medium transition-colors",
+                                      pathname === subItem.href ? "text-primary font-extrabold" : "text-muted-foreground hover:text-foreground"
                                     )}
                                     onClick={() => setMobileOpen(false)}
                                   >
@@ -291,13 +303,20 @@ export function Navbar() {
               })}
             </div>
 
-            <div className="mt-auto pt-10">
+            <div className="mt-auto pt-10 grid gap-4">
+              <Link 
+                href="/investors" 
+                onClick={() => setMobileOpen(false)}
+                className="flex items-center justify-center gap-3 px-6 py-4 border-2 border-primary text-primary font-heading font-black uppercase tracking-widest text-xs rounded-2xl"
+              >
+                <Landmark className="w-5 h-5" /> Investor Enquiry
+              </Link>
               <Link 
                 href="/contact" 
                 onClick={() => setMobileOpen(false)}
                 className="flex items-center justify-center gap-3 px-6 py-5 bg-primary text-primary-foreground font-heading font-black uppercase tracking-widest text-xs rounded-2xl shadow-xl shadow-primary/30"
               >
-                Start Your Project <MoveRight className="w-5 h-5" />
+                Get Started <MoveRight className="w-5 h-5" />
               </Link>
             </div>
           </motion.div>

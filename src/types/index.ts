@@ -32,6 +32,8 @@ export interface ServiceVertical {
   capabilities: { title: string; desc: string }[];
   useCases: string[];
   results?: { label: string; value: string }[];
+  revenueModel?: string;
+  compliance?: string;
 }
 
 export interface TimelineEvent {

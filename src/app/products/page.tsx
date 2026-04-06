@@ -1,6 +1,6 @@
 import PageHero from "@/components/common/PageHero";
 import * as motion from "framer-motion/client";
-import { Plane, Brain, Bot, Shield, Leaf, Cog, GraduationCap, Headphones, CheckCircle2 } from "lucide-react";
+import { CheckCircle2, ShieldCheck, Zap, TrendingUp, Landmark, Award } from "lucide-react";
 import Link from "next/link";
 import { services } from "@/data/services";
 
@@ -8,9 +8,9 @@ export default function ProductsPage() {
   return (
     <>
       <PageHero 
-        tag="Products & Services" 
-        title="Full-Spectrum Deep-Tech Solutions" 
-        description="From concept to deployment — end-to-end capabilities across aerospace, AI, robotics, defense, and environmental technology." 
+        tag="Products & Verticals" 
+        title="Full-Spectrum Engineering" 
+        description="Six deep-tech engineering verticals designed for mission-critical reliability, regulatory compliance, and civilian-defense synergy." 
       />
       
       <section className="py-24 relative overflow-hidden bg-background">
@@ -19,7 +19,7 @@ export default function ProductsPage() {
         <div className="absolute bottom-0 right-0 w-1/4 h-1/4 bg-primary/10 rounded-full blur-[100px] pointer-events-none" />
 
         <div className="container mx-auto px-6 relative z-10 w-full">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {services.map((s, i) => (
               <motion.div 
                 key={s.title} 
@@ -34,29 +34,52 @@ export default function ProductsPage() {
                   <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center group-hover:bg-primary transition-colors duration-500 shadow-inner">
                     <s.icon className="w-8 h-8 text-primary group-hover:text-primary-foreground transition-colors duration-500" />
                   </div>
-                  <span className="text-[10px] font-black uppercase tracking-[0.3em] text-muted-foreground/50 select-none">Vertical {String(i + 1).padStart(2, '0')}</span>
+                  <div className="text-right">
+                    <span className="block text-[8px] font-black uppercase tracking-[0.3em] text-muted-foreground/50 select-none mb-2">Vertical {String(i + 1).padStart(2, '0')}</span>
+                    <div className="flex items-center gap-2 px-3 py-1 bg-emerald-500/10 border border-emerald-500/20 rounded-full">
+                       <ShieldCheck className="w-3 h-3 text-emerald-500" />
+                       <span className="text-[8px] font-black uppercase tracking-widest text-emerald-600">Compliant</span>
+                    </div>
+                  </div>
                 </div>
                 
                 <div className="flex-1">
-                  <h3 className="font-heading font-black text-3xl text-foreground mb-4 group-hover:text-primary transition-colors tracking-tight">{s.title}</h3>
+                  <div className="flex items-center gap-3 mb-4">
+                    <h3 className="font-heading font-black text-3xl text-foreground group-hover:text-primary transition-colors tracking-tight italic">{s.title}</h3>
+                  </div>
                   <p className="text-muted-foreground text-lg leading-relaxed mb-10 font-light">{s.desc}</p>
                   
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-auto">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {s.features.map((f) => (
                       <div key={f} className="flex items-center gap-3 p-3 bg-background border border-border/40 rounded-xl group-hover:bg-primary/5 group-hover:border-primary/20 transition-all duration-300">
                         <CheckCircle2 className="w-4 h-4 text-primary" />
-                        <span className="text-sm font-medium text-muted-foreground group-hover:text-foreground transition-colors">{f}</span>
+                        <span className="text-[11px] font-medium text-muted-foreground group-hover:text-foreground transition-colors leading-tight">{f}</span>
                       </div>
                     ))}
                   </div>
                 </div>
 
-                <div className="mt-10 pt-8 border-t border-border/50">
+                <div className="mt-10 pt-8 border-t border-border/50 grid grid-cols-2 gap-8">
+                  <div className="space-y-2">
+                    <span className="flex items-center gap-2 text-[8px] font-black uppercase tracking-widest text-primary/60">
+                      <TrendingUp className="w-3 h-3" /> Revenue Model
+                    </span>
+                    <p className="text-[10px] text-foreground font-bold uppercase tracking-tight italic">{s.revenueModel}</p>
+                  </div>
+                  <div className="space-y-2">
+                    <span className="flex items-center gap-2 text-[8px] font-black uppercase tracking-widest text-primary/60">
+                      <Award className="w-3 h-3" /> Alignment
+                    </span>
+                    <p className="text-[10px] text-foreground font-bold uppercase tracking-tight">{s.compliance}</p>
+                  </div>
+                </div>
+                
+                <div className="mt-8">
                   <Link 
-                    href={`/products/${s.slug}`}
-                    className="text-sm font-heading font-black uppercase tracking-[0.2em] text-primary hover:gap-3 flex items-center gap-2 transition-all hover:underline underline-offset-8"
+                    href={`/contact`}
+                    className="w-full text-center py-4 bg-muted hover:bg-primary hover:text-primary-foreground transition-all rounded-xl text-[10px] font-heading font-black uppercase tracking-widest"
                   >
-                    Explore Capabilities →
+                    Enquire for Projects &rarr;
                   </Link>
                 </div>
               </motion.div>
@@ -66,16 +89,23 @@ export default function ProductsPage() {
       </section>
 
       {/* Trust Quote / Banner */}
-      <section className="py-24 bg-primary text-primary-foreground overflow-hidden">
-        <div className="container mx-auto px-6 text-center">
+      <section className="py-24 bg-primary text-primary-foreground overflow-hidden relative">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(0,0,0,0.1),transparent)]" />
+        <div className="container mx-auto px-6 text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="max-w-3xl mx-auto"
+            className="max-w-4xl mx-auto"
           >
-            <h2 className="text-3xl md:text-5xl font-heading font-black mb-8 leading-tight">"We don't just build technology. We build India's future self-reliance."</h2>
-            <p className="text-primary-foreground/70 text-lg md:text-xl font-light italic">— Our Engineering Philosophy</p>
+            <h2 className="text-3xl md:text-5xl font-heading font-black mb-8 leading-tight tracking-tighter italic">
+              &quot;Engineering self-reliance through proprietary tech IP, field-validated hardware, and India-first innovation.&quot;
+            </h2>
+            <div className="flex items-center justify-center gap-4">
+               <div className="h-px w-12 bg-primary-foreground/30" />
+               <p className="text-primary-foreground/70 text-sm font-black uppercase tracking-[0.3em]">Adiveer Aviation Ethos</p>
+               <div className="h-px w-12 bg-primary-foreground/30" />
+            </div>
           </motion.div>
         </div>
       </section>

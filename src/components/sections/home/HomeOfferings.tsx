@@ -12,10 +12,14 @@ export function HomeOfferings() {
   return (
     <section className="py-24 bg-background relative">
       <div className="container mx-auto px-6 relative z-10 w-full">
-        <SectionHeading tag="Key Offerings" title="From Concept to Deployment" />
+        <SectionHeading 
+          tag="Key Offerings" 
+          title="Strategic solution offerings" 
+          description="High-fidelity deep-tech solutions tailored for Indian operational conditions and global regulatory standards."
+        />
         <ParallaxSection speed={0.15}>
-          <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8" stagger={0.15}>
-            {offerings.map((o) => (
+          <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" stagger={0.15}>
+            {offerings.slice(0, 6).map((o) => (
               <Link key={o.num} href={o.href}>
                 <motion.div
                   variants={staggerItem}

@@ -8,6 +8,7 @@ interface SectionHeadingProps {
   description?: string;
   align?: "left" | "center";
   gradient?: boolean;
+  light?: boolean;
 }
 
 const titleWordVariants = {
@@ -20,7 +21,7 @@ const titleWordVariants = {
   }),
 };
 
-const SectionHeading = ({ tag, title, description, align = "center", gradient = false }: SectionHeadingProps) => {
+const SectionHeading = ({ tag, title, description, align = "center", gradient = false, light = false }: SectionHeadingProps) => {
   const words = title.split(" ");
 
   return (
@@ -37,12 +38,12 @@ const SectionHeading = ({ tag, title, description, align = "center", gradient = 
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ type: "spring", stiffness: 150 }}
-          className="inline-block px-3 py-1 text-xs font-heading font-semibold uppercase tracking-[0.2em] text-primary border border-primary/30 rounded-full mb-4"
+          className={`inline-block px-3 py-1 text-xs font-heading font-semibold uppercase tracking-[0.2em] rounded-full mb-4 ${light ? 'text-primary-foreground border-primary-foreground/30' : 'text-primary border border-primary/30'}`}
         >
           {tag}
         </motion.span>
       )}
-      <h2 className={`text-3xl md:text-4xl lg:text-5xl font-heading font-bold leading-tight ${gradient ? 'text-gradient' : 'text-foreground'}`}>
+      <h2 className={`text-3xl md:text-4xl lg:text-5xl font-heading font-bold leading-tight ${gradient ? 'text-gradient' : light ? 'text-white' : 'text-foreground'}`}>
         {words.map((word, i) => (
           <motion.span
             key={`${word}-${i}`}
@@ -63,7 +64,7 @@ const SectionHeading = ({ tag, title, description, align = "center", gradient = 
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3, duration: 0.5 }}
-          className="mt-4 text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed"
+          className={`mt-4 text-lg max-w-2xl mx-auto leading-relaxed ${light ? 'text-white/70 font-light' : 'text-muted-foreground'}`}
         >
           {description}
         </motion.p>

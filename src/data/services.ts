@@ -1,5 +1,5 @@
 import { ServiceVertical } from "@/types";
-import { Plane, Brain, Bot, Shield, Leaf, Cog, GraduationCap, Headphones } from "lucide-react";
+import { Plane, Brain, Bot, Shield, Cpu, Cloud } from "lucide-react";
 
 export const services: ServiceVertical[] = [
   { 
@@ -7,79 +7,197 @@ export const services: ServiceVertical[] = [
     slug: "drone-systems",
     icon: Plane, 
     title: "Drone Systems", 
-    desc: "Custom-designed UAVs for surveillance, mapping, delivery, and defense. Multi-rotor, fixed-wing, and VTOL platforms engineered for extreme conditions.", 
-    fullDesc: "Our drone systems represent the pinnacle of Indian aerospace engineering. We specialize in building autonomous platforms that survive where others fail—from the high-altitude borders of the Himalayas to the dense tropical forests of Central India. Every airframe is a result of rigorous R&D, focused on endurance, payload modularity, and encrypted communication.",
-    features: ["Long-endurance platforms", "Heavy-lift cargo drones", "Swarm-capable systems", "Custom payload integration"],
+    desc: "Custom-designed UAVs for surveillance, mapping, delivery, and defense. Multi-rotor, fixed-wing, and VTOL platforms, Nano to Large category.", 
+    fullDesc: "Custom-designed UAVs and unmanned aircraft systems for surveillance, precision agriculture, cargo delivery, mapping, and defense. Our drone platforms span Nano to Large categories as defined under DGCA Drone Rules 2021, covering multi-rotor, fixed-wing, and VTOL configurations. All platforms are designed for DGCA Type Certification from the ground up.",
+    features: [
+      "Long-endurance surveillance platforms (24h+ continuous operation)",
+      "Heavy-lift cargo and logistics drones",
+      "Swarm-capable multi-drone systems",
+      "Custom payload integration (thermal, LiDAR, multispectral, EO/IR)",
+      "BVLOS (Beyond Visual Line of Sight) capable architectures",
+      "Agricultural spraying UAVs — precision dosing, autonomous route planning"
+    ],
     capabilities: [
-      { title: "Vertical Take-Off", desc: "Advanced VTOL capabilities allowing deployment from restricted, rugged terrain without runways." },
-      { title: "Persistent Loiter", desc: "Optimized power management for 12+ hours of continuous station-keeping and surveillance." },
-      { title: "Payload Modularity", desc: "Quick-swap rails for multispectral, thermal, LiDAR, and specialized delivery pods." }
+      { title: "Industries Served", desc: "Defence, Agriculture, Logistics, Infrastructure, Smart Cities, Disaster Management" },
+      { title: "Revenue Models", desc: "Platform sales, fleet leasing, government procurement, export contracts" }
     ],
     useCases: ["Border Surveillance", "Medical Supply Delivery", "Large-scale Mapping"],
     results: [
-      { label: "Endurance", value: "18h+" },
-      { label: "Payload", value: "45kg" },
-      { label: "Range", value: "120km" }
-    ]
+      { label: "Endurance", value: "24h+" },
+      { label: "Payload", value: "Custom" },
+      { label: "Compliance", value: "DGCA 2021" }
+    ],
+    revenueModel: "Platform Sales & Leasing",
+    compliance: "DGCA Rules 2021 / NPNT"
   },
   { 
     id: "ai", 
     slug: "ai-solutions",
     icon: Brain, 
-    title: "AI Solutions", 
-    desc: "Edge AI, computer vision, NLP, and autonomous decision-making systems for real-world deployment.", 
-    fullDesc: "YantraQ's AI solutions move beyond simple algorithms. we build high-consequence intelligence that powers autonomous systems. Our focus is on 'Small-Box AI'—high-performance inference that runs locally on drones and robots, removing the dependency on cloud connectivity and ensuring zero-latency decision making in tactical environments.",
-    features: ["Edge AI inference", "Computer vision", "Predictive analytics", "Autonomous navigation"],
+    title: "AI & Computer Vision", 
+    desc: "Edge AI, computer vision, NLP, and autonomous decision-making systems. Proprietary models trained for aerial and ground deployment.", 
+    fullDesc: "Proprietary AI and machine learning systems developed entirely in-house — from model architecture to edge deployment. Our AI systems are purpose-built for aerial and autonomous platforms, delivering real-time intelligence without cloud dependency.",
+    features: [
+      "Edge AI inference engines (NVIDIA Jetson, custom TPU-optimized models)",
+      "Computer vision: object detection, classification, tracking, and anomaly detection",
+      "Real-time drone data analytics and 3D mapping from aerial imagery",
+      "Natural Language Processing for operational command interfaces",
+      "Predictive maintenance AI for UAV fleet health monitoring",
+      "AI-powered UTM (Unmanned Traffic Management) decision systems",
+      "Federated learning architectures for privacy-preserving defense AI"
+    ],
     capabilities: [
-      { title: "Edge Inference", desc: "Proprietary model compression allowing complex neural networks to run on low-power ARM architecture." },
-      { title: "Vision-based SLAM", desc: "Simultaneous Localization and Mapping for navigation in GPS-denied environments." },
-      { title: "Anomaly Detection", desc: "Real-time identification of behavioral or structural anomalies in massive data streams." }
+      { title: "Revenue Models", desc: "AI platform licensing, API monetization, government AI contracts, bundled hardware+software solutions" }
     ],
     useCases: ["Autonomous Navigation", "Threat Detection", "Predictive Maintenance"],
     results: [
       { label: "Latency", value: "<25ms" },
-      { label: "Accuracy", value: "99.7%" },
       { label: "Compute", value: "Edge-only" }
-    ]
+    ],
+    revenueModel: "IP Licensing & ML-as-a-Service",
+    compliance: "Data Privacy & Security Norms"
   },
   { 
     id: "robotics", 
     slug: "robotics-platforms",
     icon: Bot, 
     title: "Robotics Platforms", 
-    desc: "Ground, aerial, and marine autonomous platforms for hazardous, remote, and complex environments.", 
-    fullDesc: "Our robotics division bridges the gap between digital intelligence and physical execution. From rugged UGVs (Unmanned Ground Vehicles) that navigate disaster zones to high-precision robotic arms for specialized payload handling, we build the machines that go where humans cannot.",
-    features: ["UGV platforms", "Robotic arms", "Autonomous navigation", "Sensor integration"],
-    capabilities: [
-      { title: "Terrain Agility", desc: "Multi-modal locomotive systems designed for debris-filled or subterranean environments." },
-      { title: "Force Feedback", desc: "Advanced haptic integration for precision manipulation in hazardous material handling." },
-      { title: "Swarm Coordination", desc: "Mesh-linked ground units that coordinate search-and-rescue patterns autonomously." }
+    desc: "Ground, aerial, and marine autonomous robots for hazardous, remote, and complex environments. Full RaaS model available.", 
+    fullDesc: "Full-stack autonomous robotics for hazardous, remote, and complex environments. Our robotics systems span ground, aerial, and marine domains, built on ROS2 middleware with proprietary perception and planning stacks.",
+    features: [
+      "UGV (Unmanned Ground Vehicles) for inspection, patrol, and logistics",
+      "Robotic arms and end-effectors for industrial automation",
+      "SLAM-based autonomous navigation without GPS dependency",
+      "Collaborative robots (cobots) for manufacturing environments",
+      "Bomb disposal and hazardous environment robots",
+      "Robotics-as-a-Service (RaaS) model for enterprise and government"
     ],
-    useCases: ["Hazardous Material Disposal", "Subterranean Exploration", "Warehouse Automation"],
+    capabilities: [
+      { title: "Revenue Models", desc: "Product sale, system integration, service contracts, government tenders, RaaS subscriptions" }
+    ],
+    useCases: ["Hazardous Material Disposal", "Search and Rescue", "Warehouse Automation"],
     results: [
-      { label: "Battery Life", value: "8h" },
-      { label: "Torque", value: "120Nm" },
-      { label: "Response", value: "Real-time" }
-    ]
+      { label: "Middleware", value: "ROS2" },
+      { label: "Navigation", value: "SLAM" }
+    ],
+    revenueModel: "Unit Sales & RaaS Model",
+    compliance: "ISO Robotics Standards"
   },
   { 
     id: "defense", 
     slug: "defense-tech",
     icon: Shield, 
     title: "Defense Technology", 
-    desc: "Mission-critical systems for national security, border protection, and tactical operations.", 
-    fullDesc: "In the defense sector, reliability is the only metric that matters. YantraQ develops tactical technology that secures high-value assets and protects lives through persistent surveillance, electronic countermeasures, and secure mesh communication networks.",
-    features: ["Surveillance systems", "Counter-drone tech", "Secure communications", "Tactical platforms"],
-    capabilities: [
-      { title: "Jamming Resistance", desc: "Frequency-hopping and signal-hardening techniques for contested electronic environments." },
-      { title: "Zero-Trust Mesh", desc: "End-to-end encrypted communication networks that function without centralized infrastructure." },
-      { title: "Tactical Overlays", desc: "Real-time GIS and threat data fusion for command-and-control visibility." }
+    desc: "Mission-critical ISR, counter-UAS, and tactical platforms for national security. Aligned with DAP 2020 and iDEX programmes.", 
+    fullDesc: "Mission-critical systems for national security, border protection, and tactical operations. Developed under the Aatmanirbhar Bharat framework and aligned with DAP 2020, iDEX, and DRDO Technology Development Fund programmes.",
+    features: [
+      "ISR (Intelligence, Surveillance, Reconnaissance) drone platforms",
+      "Counter-UAS / Anti-drone detection and neutralization systems",
+      "Loitering munitions and tactical UAV platforms",
+      "Secure, encrypted communications and ground control stations",
+      "Border surveillance and coastal monitoring systems",
+      "Electronic warfare payload integration"
     ],
-    useCases: ["Border Protection", "Tactical Mesh Comms", "Sensitive Asset Security"],
+    capabilities: [
+      { title: "Procurement Alignment", desc: "DAP 2020, iDEX Challenge Programmes, DRDO TDF, MoD Make-I/Make-II categories" },
+      { title: "Clients", desc: "Indian Armed Forces, BSF, CRPF, State Police, DRDO, BEL, HAL ecosystem" }
+    ],
+    useCases: ["Border Protection", "Sensitive Asset Security", "Counter-UAS"],
     results: [
-      { label: "Uptime", value: "100%" },
-      { label: "Encryption", value: "AES-256" },
-      { label: "Deploy Time", value: "<5m" }
-    ]
+      { label: "Compliance", value: "DAP 2020" },
+      { label: "Encryption", value: "Military" }
+    ],
+    revenueModel: "Govt. Procurement (DAP 2020)",
+    compliance: "iDEX / iDEX-Prime / DAP 2020"
+  },
+  { 
+    id: "embedded", 
+    slug: "embedded-systems",
+    icon: Cpu, 
+    title: "Embedded Systems & Electronics", 
+    desc: "Custom flight controllers, PCB design, SoC solutions, firmware, and sensor fusion for UAV and robotic platforms.", 
+    fullDesc: "Vertically integrated electronics design — from schematic to production-ready hardware. We design, prototype, and manufacture custom embedded systems that power our own platforms and are available as standalone OEM components to the aerospace and defense ecosystem.",
+    features: [
+      "Custom flight controllers and autopilot firmware",
+      "PCB design, fabrication, and system-on-chip (SoC) solutions",
+      "FPGA-based real-time processing systems",
+      "Sensor fusion algorithms: IMU, GPS/RTK, LiDAR, barometer, magnetometer",
+      "MAVLink, CAN bus, UART, SPI, I2C protocol stacks",
+      "Edge inference hardware modules and development kits"
+    ],
+    capabilities: [
+      { title: "Revenue Models", desc: "Hardware product sales, IP core licensing, contract electronics manufacturing, OEM supply" }
+    ],
+    useCases: ["Avionics Design", "Sensor Fusion", "Real-time Control"],
+    results: [
+      { label: "Integration", value: "SoC" },
+      { label: "Protocol", value: "MAVLink" }
+    ],
+    revenueModel: "OEM Sales & IP Licensing",
+    compliance: "AEC-Q / ISO 26262 Alignment"
+  },
+  { 
+    id: "saas", 
+    slug: "saas-platforms",
+    icon: Cloud, 
+    title: "SaaS & Data Platforms", 
+    desc: "Cloud-native drone fleet management, UTM software, agricultural intelligence, and geospatial analytics dashboards.", 
+    fullDesc: "Cloud-native, subscription-based software products for drone operators, enterprises, and government agencies. Our platforms turn raw drone and sensor data into actionable intelligence.",
+    features: [
+      "Drone Fleet Management Platform — real-time telemetry, mission planning, maintenance tracking for 50+ drone fleets",
+      "UTM Intelligence Suite — airspace deconfliction, zone compliance, NPNT integration",
+      "AgroSense — agricultural drone data analytics: crop disease detection, NDVI mapping, irrigation intelligence",
+      "InfraView — infrastructure inspection analytics with automated defect detection",
+      "Pilot Training Simulator — regulatory-compliant RPAS operator training and assessment platform"
+    ],
+    capabilities: [
+      { title: "Revenue Models", desc: "Monthly/annual SaaS subscriptions, per-drone licensing fees, enterprise contracts, white-label API licensing" }
+    ],
+    useCases: ["Fleet Operations", "Agricultural Intelligence", "Infrastructure Monitoring"],
+    results: [
+      { label: "Deployment", value: "Cloud" },
+      { label: "Analytics", value: "Al-driven" }
+    ],
+    revenueModel: "Subscription (SaaS) Model",
+    compliance: "DigitalSky / SOC2 Standard"
+  }
+];
+
+export const serviceOfferings = [
+  {
+    service: "R&D & Prototyping",
+    desc: "Rapid concept-to-prototype engineering in aerospace, AI, and robotics",
+    target: "DRDO, Startups, PSUs, iDEX",
+    pricing: "Project-based"
+  },
+  {
+    service: "Systems Integration",
+    desc: "End-to-end integration of hardware, AI, sensors, and comms",
+    target: "OEMs, Defense, Smart Cities",
+    pricing: "Fixed fee + retainer"
+  },
+  {
+    service: "Field Deployment",
+    desc: "Turnkey deployment in extreme environments with operator training",
+    target: "Government, Infrastructure",
+    pricing: "Day-rate + support contract"
+  },
+  {
+    service: "Drone Delivery Operations",
+    desc: "Contracted drone logistics for pharma, e-commerce, government",
+    target: "Healthcare, FMCG, Government",
+    pricing: "Per-delivery / subscription"
+  },
+  {
+    service: "Training & Consulting",
+    desc: "Remote Pilot Licence training, enterprise AI/drone upskilling",
+    target: "Corporates, Government, DGCA schools",
+    pricing: "Per-seat / course fee"
+  },
+  {
+    service: "IP Licensing",
+    desc: "Patent licensing, technology transfer, white-label platform licensing",
+    target: "Industry partners, OEMs, Overseas",
+    pricing: "Royalty / upfront fee"
   }
 ];

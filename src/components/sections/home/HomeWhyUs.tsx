@@ -17,7 +17,7 @@ export function HomeWhyUs() {
 
       <div className="container mx-auto px-6 relative z-10">
         <SectionHeading tag="Why AdiVeer" title="Why Choose AdiVeer Aviations" />
-        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto" stagger={0.15}>
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto" stagger={0.15}>
           {whyUs.map((w) => (
             <motion.div
               key={w.title}

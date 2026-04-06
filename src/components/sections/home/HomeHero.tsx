@@ -56,14 +56,24 @@ export function HomeHero() {
       {/* Hero Content */}
       <motion.div style={{ y: heroY, opacity: heroOpacity }} className="container mx-auto px-6 relative z-10 pt-20">
         <div className="max-w-4xl">
-          <motion.span
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.2, type: "spring", stiffness: 100 }}
-            className="inline-block px-4 py-1.5 text-xs font-heading font-semibold uppercase tracking-[0.2em] text-primary border border-primary/30 rounded-full mb-8 bg-primary/5 backdrop-blur-sm"
-          >
-            {heroHeadline.tag}
-          </motion.span>
+          <div className="flex flex-wrap items-center gap-4 mb-8">
+            <motion.span
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.2, type: "spring", stiffness: 100 }}
+              className="inline-block px-4 py-1.5 text-xs font-heading font-semibold uppercase tracking-[0.2em] text-primary border border-primary/30 rounded-full bg-primary/5 backdrop-blur-sm"
+            >
+              {heroHeadline.tag}
+            </motion.span>
+            <motion.span
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.3, type: "spring", stiffness: 100 }}
+              className="inline-block px-4 py-1.5 text-xs font-heading font-semibold uppercase tracking-[0.2em] text-foreground/60 border border-border rounded-full bg-muted/20 backdrop-blur-sm"
+            >
+              Pre-Seed Scaling
+            </motion.span>
+          </div>
 
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-heading font-bold leading-[1.1] text-foreground mb-6">
             {heroHeadline.words.map((word, i) => (

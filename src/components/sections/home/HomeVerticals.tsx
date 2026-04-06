@@ -14,12 +14,12 @@ export function HomeVerticals() {
       <div className="container mx-auto px-6 relative z-10">
         <SectionHeading 
           tag="What We Do" 
-          title="Engineered Domain Excellence" 
-          description="Integrated capabilities across aerospace, AI, robotics, defense, and environmental technology." 
+          title="6 Core Verticals" 
+          description="Integrated deep-tech capabilities across six engineering domains — from silicon to sky." 
         />
-        <StaggerContainer className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8" stagger={0.12}>
-          {services.map((v) => (
-            <Link key={v.title} href={`/products/${v.slug}`}>
+        <StaggerContainer className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 md:gap-8" stagger={0.12}>
+          {verticals.map((v) => (
+            <Link key={v.title} href={`/products#${v.id}`}>
               <motion.div
                 variants={staggerItem}
                 whileHover={{ y: -8, transition: { type: "spring", stiffness: 300 } }}
