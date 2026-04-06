@@ -55,7 +55,6 @@ export function HomeFeaturedProject() {
                   <div key={idx} className="space-y-1">
                     <div className="flex items-baseline">
                       <CountUp value={m.value} className="text-3xl md:text-4xl font-heading font-black text-primary" />
-                      {m.unit && <span className="text-2xl font-heading font-bold text-primary ml-1">{m.unit}</span>}
                     </div>
                     <div className="text-xs uppercase tracking-wider text-muted-foreground font-bold">{m.label}</div>
                   </div>
