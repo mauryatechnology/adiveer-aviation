@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import SectionHeading from "@/components/common/SectionHeading";
 import StaggerContainer, { staggerItem } from "@/components/animations/StaggerContainer";
 import ParallaxSection from "@/components/animations/ParallaxSection";
@@ -37,8 +38,10 @@ export function HomeOfferings() {
                       <h3 className="font-heading font-bold text-xl text-foreground mb-3 group-hover:text-primary transition-colors">{o.title}</h3>
                       <p className="text-muted-foreground leading-relaxed text-sm md:text-base font-light">{o.desc}</p>
                     </div>
-                    <div className="mt-6 pt-4 border-t border-border/10 text-[10px] font-black uppercase tracking-widest text-primary/40 group-hover:text-primary transition-colors">
-                      Learn More &rarr;
+                    <div className="mt-6 pt-4 border-t border-border/10 flex justify-end">
+                      <div className="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-primary border border-primary/20 px-4 py-2 rounded-xl group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
+                        Learn More <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1" />
+                      </div>
                     </div>
                   </div>
                 </motion.div>

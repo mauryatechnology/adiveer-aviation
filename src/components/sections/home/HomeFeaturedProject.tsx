@@ -87,8 +87,11 @@ export function HomeFeaturedProject() {
           className="text-center mt-20"
         >
           <MagneticButton>
-            <Link href="/work" className="inline-flex items-center gap-2 text-xs font-heading font-black uppercase tracking-[0.3em] text-primary hover:scale-105 transition-all">
-              Explore Full Portfolio <ExternalLink className="w-4 h-4" />
+            <Link 
+              href="/work" 
+              className="px-8 py-4 bg-primary text-primary-foreground rounded-2xl font-heading font-black uppercase tracking-widest text-xs hover:scale-105 transition-all inline-flex items-center gap-3 shadow-xl shadow-primary/20"
+            >
+              Explore Full Portfolio <ArrowRight className="w-4 h-4" />
             </Link>
           </MagneticButton>
         </motion.div>

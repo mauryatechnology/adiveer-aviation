@@ -1,9 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import { stages } from "@/data/home";
 import SectionHeading from "@/components/common/SectionHeading";
 import StaggerContainer, { staggerItem } from "@/components/animations/StaggerContainer";
+import MagneticButton from "@/components/animations/MagneticButton";
 
 export function HomeStages() {
   return (
@@ -51,18 +54,29 @@ export function HomeStages() {
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="mt-20 p-8 bg-primary/5 border border-primary/10 rounded-2xl max-w-3xl mx-auto flex flex-col md:flex-row items-center gap-6"
+          className="mt-20 p-8 md:p-12 bg-primary/5 border border-primary/10 rounded-[2.5rem] max-w-5xl mx-auto flex flex-col lg:flex-row items-center gap-10"
         >
           <div className="flex -space-x-3">
             {[1, 2, 3, 4].map((i) => (
-              <div key={i} className="w-10 h-10 rounded-full border-2 border-background bg-muted flex items-center justify-center overflow-hidden">
-                <div className="w-full h-full bg-primary/20 flex items-center justify-center text-[10px] font-black text-primary">S{i}</div>
+              <div key={i} className="w-14 h-14 rounded-full border-4 border-background bg-muted flex items-center justify-center overflow-hidden shadow-xl">
+                <div className="w-full h-full bg-primary/20 flex items-center justify-center text-xs font-black text-primary">S{i}</div>
               </div>
             ))}
           </div>
-          <p className="text-xs text-muted-foreground font-medium text-center md:text-left leading-relaxed">
-            Adiveer Aviation&apos;s process is engineered for **speed-to-field** — ensuring that critical technologies reach those who need them in record time without compromising safety or compliance.
-          </p>
+          <div className="flex-1 text-center lg:text-left">
+            <h4 className="text-xl font-heading font-black text-foreground mb-3 tracking-tight italic">Engineered for speed-to-field</h4>
+            <p className="text-sm text-muted-foreground font-light leading-relaxed max-w-xl">
+              Our vertically integrated engineering lifecycle ensures that critical airborne and AI technologies reach operational environments in record time without compromising safety.
+            </p>
+          </div>
+          <MagneticButton>
+            <Link 
+              href="/contact" 
+              className="px-8 py-4 bg-primary text-primary-foreground rounded-2xl font-heading font-black uppercase tracking-widest text-xs hover:scale-105 transition-all inline-flex items-center gap-3 shadow-xl shadow-primary/20 whitespace-nowrap"
+            >
+              Start Your Project <ArrowRight className="w-4 h-4" />
+            </Link>
+          </MagneticButton>
         </motion.div>
       </div>
     </section>

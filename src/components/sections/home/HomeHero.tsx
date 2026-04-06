@@ -24,7 +24,7 @@ const heroWordVariants = {
 export function HomeHero() {
   const heroRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({ target: heroRef, offset: ["start start", "end start"] });
-  
+
   const heroY = useTransform(scrollYProgress, [0, 1], [0, 150]);
   const heroOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
   const heroImgY = useTransform(scrollYProgress, [0, 1], [0, -80]);
@@ -111,17 +111,19 @@ export function HomeHero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.3, duration: 0.5 }}
-            className="flex flex-wrap gap-4"
+            className="flex flex-wrap items-center gap-6"
           >
-            <MagneticButton>
-              <Link href="/technology" className="px-7 py-3.5 bg-primary text-primary-foreground font-heading font-semibold uppercase tracking-wider rounded-lg hover:bg-primary/85 transition-all inline-flex items-center gap-2 group shadow-lg shadow-primary/20">
-                Explore Our Technologies
-                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+            <MagneticButton className="inline-block">
+              <Link href="/products" className="px-10 py-5 bg-primary text-primary-foreground font-heading font-black uppercase tracking-widest text-xs rounded-2xl hover:scale-105 transition-all inline-flex items-center gap-3 group shadow-2xl shadow-primary/30">
+                Explore Our Tech
+                <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
               </Link>
             </MagneticButton>
-            <MagneticButton>
-              <Link href="/about" className="px-7 py-3.5 border border-primary/30 text-primary font-heading font-semibold rounded-lg hover:bg-primary/5 transition-all backdrop-blur-sm">
-                Our Story ▶
+            <MagneticButton className="inline-block">
+              <Link href="/about" className="px-10 py-4 border border-primary/30 text-primary font-heading font-black uppercase tracking-widest text-xs rounded-2xl hover:bg-primary/5 transition-all backdrop-blur-sm group inline-flex items-center gap-2">
+                Our Story <div className="p-1.5 rounded-full bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all">
+                  <ArrowRight className="w-4 h-4 ml-0.5" />
+                </div>
               </Link>
             </MagneticButton>
           </motion.div>

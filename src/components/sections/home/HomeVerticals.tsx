@@ -2,8 +2,10 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import SectionHeading from "@/components/common/SectionHeading";
 import StaggerContainer, { staggerItem } from "@/components/animations/StaggerContainer";
+import MagneticButton from "@/components/animations/MagneticButton";
 import { services } from "@/data/services";
 
 export function HomeVerticals() {
@@ -33,8 +35,10 @@ export function HomeVerticals() {
                   {v.desc}
                 </p>
                 
-                <div className="mt-auto pt-4 border-t border-border/10 flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-primary/40 group-hover:text-primary transition-colors">
-                  Details &rarr;
+                <div className="mt-auto pt-4 border-t border-border/10 flex justify-end">
+                  <div className="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-primary border border-primary/20 px-4 py-2 rounded-xl group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
+                    Details <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1" />
+                  </div>
                 </div>
               </motion.div>
             </Link>
@@ -49,12 +53,14 @@ export function HomeVerticals() {
            transition={{ delay: 0.5 }}
            className="mt-16 text-center"
         >
-          <Link 
-            href="/products"
-            className="inline-flex items-center gap-2 text-xs font-heading font-black uppercase tracking-[0.3em] text-primary hover:text-foreground transition-all group"
-          >
-            Explore All Solutions <div className="w-12 h-px bg-primary/30 group-hover:w-16 group-hover:bg-primary transition-all ml-2" />
-          </Link>
+          <MagneticButton>
+            <Link 
+              href="/products"
+              className="px-8 py-4 bg-primary text-primary-foreground rounded-2xl font-heading font-black uppercase tracking-widest text-xs hover:scale-105 transition-all inline-flex items-center gap-3 shadow-xl shadow-primary/20"
+            >
+              Explore All Solutions <ArrowRight className="w-4 h-4" />
+            </Link>
+          </MagneticButton>
         </motion.div>
       </div>
     </section>

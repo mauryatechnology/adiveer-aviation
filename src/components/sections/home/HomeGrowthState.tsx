@@ -1,9 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { CheckCircle2, Loader2, ArrowUpRight } from "lucide-react";
+import { CheckCircle2, Loader2, ArrowUpRight, ArrowRight } from "lucide-react";
 import { growthMilestones, currentStatus } from "@/data/home";
 import Link from "next/link";
+import MagneticButton from "@/components/animations/MagneticButton";
 
 export function HomeGrowthState() {
   return (
@@ -12,12 +13,13 @@ export function HomeGrowthState() {
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
           
           <div className="flex-1 w-full max-w-2xl">
-            <div className="flex items-center gap-4 mb-6">
-               <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-[10px] font-black uppercase tracking-widest border border-primary/20">Current State: {currentStatus.phase}</span>
-               <div className="h-px flex-1 bg-border" />
+            <div className="mb-10 text-center lg:text-left">
+              <span className="inline-block px-3 py-1 text-xs font-heading font-semibold uppercase tracking-[0.2em] text-primary border border-primary/30 rounded-full mb-4">Real-Time Progression</span>
+              <h2 className="text-3xl md:text-5xl font-heading font-bold text-foreground mb-4 tracking-tight">Growth Milestones & Vision</h2>
+              <p className="text-muted-foreground text-sm lg:text-base font-light max-w-xl mx-auto lg:mx-0">
+                A transparent view into our technical roadmap and strategic scaling from pre-seed to national-scale deployment.
+              </p>
             </div>
-            
-            <h2 className="text-3xl font-heading font-black text-foreground mb-8 tracking-tight">Growth Milestones & Vision</h2>
             
             <div className="space-y-4">
               {growthMilestones.map((item, idx) => (
@@ -80,12 +82,14 @@ export function HomeGrowthState() {
                 ))}
              </div>
              
-             <Link 
-               href="/investors"
-               className="mt-12 w-full flex items-center justify-center py-5 bg-white text-primary rounded-2xl font-heading font-black uppercase tracking-widest text-xs hover:scale-[1.02] transition-all"
-             >
-                Invest in Adiveer &rarr;
-             </Link>
+             <MagneticButton>
+               <Link 
+                 href="/investors"
+                 className="mt-12 w-full flex items-center justify-center py-5 bg-white text-primary rounded-2xl font-heading font-black uppercase tracking-widest text-xs hover:scale-[1.02] transition-all shadow-xl"
+               >
+                  Invest in Adiveer <ArrowRight className="w-4 h-4 ml-2" />
+               </Link>
+             </MagneticButton>
           </div>
 
         </div>

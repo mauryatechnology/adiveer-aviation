@@ -2,9 +2,10 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Zap, Globe, Wrench, Target } from "lucide-react";
+import { Zap, Globe, Wrench, Target, ArrowRight } from "lucide-react";
 import SectionHeading from "@/components/common/SectionHeading";
 import StaggerContainer, { staggerItem } from "@/components/animations/StaggerContainer";
+import MagneticButton from "@/components/animations/MagneticButton";
 
 import { whyUs } from "@/data/home";
 
@@ -47,12 +48,14 @@ export function HomeWhyUs() {
            transition={{ delay: 0.6 }}
            className="mt-16 text-center"
         >
-          <Link 
-            href="/team"
-            className="inline-flex items-center gap-2 text-xs font-heading font-black uppercase tracking-[0.3em] text-primary hover:text-foreground transition-all group"
-          >
-            Meet the Engineering Team <div className="w-12 h-px bg-primary/30 group-hover:w-16 group-hover:bg-primary transition-all ml-2" />
-          </Link>
+          <MagneticButton>
+            <Link 
+              href="/team" 
+              className="px-8 py-4 bg-primary text-primary-foreground rounded-2xl font-heading font-black uppercase tracking-widest text-xs hover:scale-105 transition-all inline-flex items-center gap-3 shadow-xl shadow-primary/20"
+            >
+              Meet the Engineering Team <ArrowRight className="w-4 h-4" />
+            </Link>
+          </MagneticButton>
         </motion.div>
       </div>
     </section>
