@@ -4,9 +4,8 @@ import { useState } from "react";
 import PageHero from "@/components/common/PageHero";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, Zap, Target, Shield, Leaf, Bot, Plane } from "lucide-react";
-import Link from "next/link";
 import { cn } from "@/lib/utils";
-
+import Link from "next/link";
 import { workCategories as categories, projects } from "@/data/work";
 
 export default function WorkPage() {

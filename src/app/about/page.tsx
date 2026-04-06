@@ -6,6 +6,14 @@ import { AboutPhilosophy } from "@/components/sections/about/AboutPhilosophy";
 import { AboutProblemSolution } from "@/components/sections/about/AboutProblemSolution";
 import { AboutLegalIdentity } from "@/components/sections/about/AboutLegalIdentity";
 
+import { buildMetadata } from "@/lib/seo";
+
+export const metadata = buildMetadata({
+  title: "About Us",
+  description: "Learn about AdiVeer Aviations, our mission, vision, and the core team behind India's premier deep tech and autonomous aviation solutions.",
+  path: "/about",
+});
+
 export default function AboutPage() {
   return (
     <>

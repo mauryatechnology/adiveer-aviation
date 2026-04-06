@@ -5,6 +5,14 @@ import { CheckCircle2, ShieldCheck, FileText, Globe, Zap, Cpu, Search, Landmark 
 import Link from "next/link";
 import { techStacks, rdLabsFull, ipStrategyArr } from "@/data/technology";
 
+import { buildMetadata } from "@/lib/seo";
+
+export const metadata = buildMetadata({
+  title: "Core Technology",
+  description: "Discover the proprietary AI algorithms, aerodynamics, and deep tech innovations that power AdiVeer Aviations' next-generation UAVs.",
+  path: "/technology",
+});
+
 export default function TechnologyPage() {
   return (
     <>

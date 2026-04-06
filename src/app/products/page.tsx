@@ -4,6 +4,14 @@ import { CheckCircle2, ShieldCheck, Zap, TrendingUp, Landmark, Award } from "luc
 import Link from "next/link";
 import { services } from "@/data/services";
 
+import { buildMetadata } from "@/lib/seo";
+
+export const metadata = buildMetadata({
+  title: "Products & Solutions",
+  description: "Explore our cutting-edge autonomous drones, defense tech, and aerospace solutions engineered for maximum performance and reliability.",
+  path: "/products",
+});
+
 export default function ProductsPage() {
   return (
     <>

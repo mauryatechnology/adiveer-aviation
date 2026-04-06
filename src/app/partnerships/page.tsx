@@ -3,6 +3,14 @@ import { PartnerIndustries } from "@/components/sections/partnerships/PartnerInd
 import { PartnerModels } from "@/components/sections/partnerships/PartnerModels";
 import { PartnerGlobalBanner } from "@/components/sections/partnerships/PartnerGlobalBanner";
 
+import { buildMetadata } from "@/lib/seo";
+
+export const metadata = buildMetadata({
+  title: "Partnerships",
+  description: "Collaborate with AdiVeer Aviations. Discover our strategic alliances and partnership programs for advancing defense and space technologies.",
+  path: "/partnerships",
+});
+
 export default function PartnershipsPage() {
   return (
     <>
