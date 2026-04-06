@@ -4,6 +4,7 @@ import { useState } from "react";
 import PageHero from "@/components/common/PageHero";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, Zap, Target, Shield, Leaf, Bot, Plane } from "lucide-react";
+import Link from "next/link";
 import { cn } from "@/lib/utils";
 
 import { workCategories as categories, projects } from "@/data/work";
@@ -96,9 +97,12 @@ export default function WorkPage() {
                   </div>
                   
                   <div className="mt-8 pt-6 flex items-center justify-end">
-                    <div className="flex items-center gap-3 text-sm font-heading font-black uppercase tracking-widest text-primary group-hover:gap-5 transition-all">
+                    <Link 
+                      href={`/work/${p.slug}`}
+                      className="flex items-center gap-3 text-sm font-heading font-black uppercase tracking-widest text-primary group-hover:gap-5 transition-all"
+                    >
                       Case Study <ArrowRight className="w-5 h-5" />
-                    </div>
+                    </Link>
                   </div>
                 </motion.div>
               ))}

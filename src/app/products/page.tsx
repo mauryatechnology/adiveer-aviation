@@ -1,7 +1,7 @@
 import PageHero from "@/components/common/PageHero";
 import * as motion from "framer-motion/client";
 import { Plane, Brain, Bot, Shield, Leaf, Cog, GraduationCap, Headphones, CheckCircle2 } from "lucide-react";
-
+import Link from "next/link";
 import { services } from "@/data/services";
 
 export default function ProductsPage() {
@@ -18,7 +18,7 @@ export default function ProductsPage() {
         <div className="absolute top-0 left-0 w-1/3 h-1/3 bg-primary/5 rounded-full blur-[140px] pointer-events-none" />
         <div className="absolute bottom-0 right-0 w-1/4 h-1/4 bg-primary/10 rounded-full blur-[100px] pointer-events-none" />
 
-        <div className="container mx-auto px-6 relative z-10">
+        <div className="container mx-auto px-6 relative z-10 w-full">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {services.map((s, i) => (
               <motion.div 
@@ -52,9 +52,12 @@ export default function ProductsPage() {
                 </div>
 
                 <div className="mt-10 pt-8 border-t border-border/50">
-                  <button className="text-sm font-heading font-black uppercase tracking-[0.2em] text-primary hover:gap-3 flex items-center gap-2 transition-all group-hover:underline underline-offset-8">
-                    Learn More →
-                  </button>
+                  <Link 
+                    href={`/products/${s.slug}`}
+                    className="text-sm font-heading font-black uppercase tracking-[0.2em] text-primary hover:gap-3 flex items-center gap-2 transition-all hover:underline underline-offset-8"
+                  >
+                    Explore Capabilities →
+                  </Link>
                 </div>
               </motion.div>
             ))}

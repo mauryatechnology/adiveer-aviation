@@ -1,6 +1,7 @@
 import PageHero from "@/components/common/PageHero";
 import * as motion from "framer-motion/client";
 import { CheckCircle2 } from "lucide-react";
+import Link from "next/link";
 import { techStacks, rdLabs } from "@/data/technology";
 
 export default function TechnologyPage() {
@@ -35,7 +36,13 @@ export default function TechnologyPage() {
                       <s.icon className="w-10 h-10 text-primary group-hover:text-primary-foreground transition-colors duration-500" />
                     </div>
                     <h3 className="font-heading font-black text-4xl text-foreground mb-4 tracking-tight group-hover:text-primary transition-colors">{s.title}</h3>
-                    <p className="text-muted-foreground text-lg leading-relaxed font-light">{s.desc}</p>
+                    <p className="text-muted-foreground text-lg leading-relaxed font-light mb-8">{s.desc}</p>
+                    <Link 
+                      href={`/technology/${s.slug}`}
+                      className="text-sm font-heading font-black uppercase tracking-[0.2em] text-primary hover:gap-3 flex items-center gap-2 transition-all hover:underline underline-offset-8"
+                    >
+                      Architecture Insight →
+                    </Link>
                   </div>
                   
                   <div className="lg:w-2/3">

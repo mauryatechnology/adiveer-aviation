@@ -23,10 +23,15 @@ export interface InsightItem {
 
 export interface ServiceVertical {
   id: string;
+  slug: string;
   icon: LucideIcon;
   title: string;
   desc: string;
-  features?: string[];
+  fullDesc: string;
+  features: string[];
+  capabilities: { title: string; desc: string }[];
+  useCases: string[];
+  results?: { label: string; value: string }[];
 }
 
 export interface TimelineEvent {
@@ -48,10 +53,14 @@ export interface PhilosophyPillar {
 
 export interface TechStack {
   id: string;
+  slug: string;
   icon: LucideIcon;
   title: string;
   desc: string;
+  fullDesc: string;
   techs: string[];
+  architecture: { component: string; role: string }[];
+  benefits: string[];
 }
 
 export interface CareerRole {
@@ -70,13 +79,20 @@ export interface ContactInfo {
 }
 
 export interface WorkProject {
+  id: string;
+  slug: string;
   name: string;
   category: string;
   icon: LucideIcon;
   desc: string;
-  tech: string;
+  fullDesc: string;
+  tech: string[];
   stat: string;
   impact: string;
+  challenge: string;
+  solution: string;
+  features: string[];
+  milestones: { label: string; value: string }[];
 }
 
 export interface Partnership {
