@@ -19,7 +19,7 @@ export default function ProductsPage() {
         <div className="absolute bottom-0 right-0 w-1/4 h-1/4 bg-primary/10 rounded-full blur-[100px] pointer-events-none" />
 
         <div className="container mx-auto px-6 relative z-10 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {services.map((s, i) => (
               <motion.div 
                 key={s.title} 
@@ -28,58 +28,48 @@ export default function ProductsPage() {
                 whileInView={{ opacity: 1, y: 0 }} 
                 viewport={{ once: true }} 
                 transition={{ delay: i * 0.05, duration: 0.5 }} 
-                className="bg-card rounded-3xl p-10 border border-border/60 hover:border-primary/30 hover:shadow-2xl transition-all duration-500 group scroll-mt-32 flex flex-col h-full"
+                className="bg-card rounded-3xl p-8 border border-border/60 hover:border-primary/40 hover:shadow-2xl transition-all duration-500 group scroll-mt-32 flex flex-col h-full overflow-hidden relative"
               >
-                <div className="flex items-start justify-between mb-8">
-                  <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center group-hover:bg-primary transition-colors duration-500 shadow-inner">
-                    <s.icon className="w-8 h-8 text-primary group-hover:text-primary-foreground transition-colors duration-500" />
+                {/* Visual Accent */}
+                <div className="absolute top-0 right-0 w-24 h-24 bg-primary/5 rounded-bl-[5rem] group-hover:bg-primary/10 transition-colors" />
+
+                <div className="flex items-start justify-between mb-8 relative z-10">
+                  <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center group-hover:bg-primary transition-colors duration-500 shadow-inner">
+                    <s.icon className="w-7 h-7 text-primary group-hover:text-primary-foreground transition-colors duration-500" />
                   </div>
                   <div className="text-right">
-                    <span className="block text-[8px] font-black uppercase tracking-[0.3em] text-muted-foreground/50 select-none mb-2">Vertical {String(i + 1).padStart(2, '0')}</span>
-                    <div className="flex items-center gap-2 px-3 py-1 bg-emerald-500/10 border border-emerald-500/20 rounded-full">
-                       <ShieldCheck className="w-3 h-3 text-emerald-500" />
-                       <span className="text-[8px] font-black uppercase tracking-widest text-emerald-600">Compliant</span>
+                    <span className="block text-[8px] font-black uppercase tracking-[0.3em] text-muted-foreground/40 select-none mb-1">V-{String(i + 1).padStart(2, '0')}</span>
+                    <div className="flex items-center gap-1.5 px-2.5 py-1 bg-emerald-500/5 border border-emerald-500/10 rounded-full">
+                       <ShieldCheck className="w-3 h-3 text-emerald-500/60" />
+                       <span className="text-[7px] font-black uppercase tracking-widest text-emerald-600/70">Certified</span>
                     </div>
                   </div>
                 </div>
                 
-                <div className="flex-1">
-                  <div className="flex items-center gap-3 mb-4">
-                    <h3 className="font-heading font-black text-3xl text-foreground group-hover:text-primary transition-colors tracking-tight italic">{s.title}</h3>
-                  </div>
-                  <p className="text-muted-foreground text-lg leading-relaxed mb-10 font-light">{s.desc}</p>
-                  
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    {s.features.map((f) => (
-                      <div key={f} className="flex items-center gap-3 p-3 bg-background border border-border/40 rounded-xl group-hover:bg-primary/5 group-hover:border-primary/20 transition-all duration-300">
-                        <CheckCircle2 className="w-4 h-4 text-primary" />
-                        <span className="text-[11px] font-medium text-muted-foreground group-hover:text-foreground transition-colors leading-tight">{f}</span>
-                      </div>
-                    ))}
-                  </div>
+                <div className="flex-1 relative z-10">
+                  <h3 className="font-heading font-black text-2xl text-foreground group-hover:text-primary transition-colors tracking-tight italic mb-3">{s.title}</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed mb-6 font-light line-clamp-4 italic">
+                    &quot;{s.desc}&quot;
+                  </p>
                 </div>
 
-                <div className="mt-10 pt-8 border-t border-border/50 grid grid-cols-2 gap-8">
-                  <div className="space-y-2">
-                    <span className="flex items-center gap-2 text-[8px] font-black uppercase tracking-widest text-primary/60">
-                      <TrendingUp className="w-3 h-3" /> Revenue Model
-                    </span>
-                    <p className="text-[10px] text-foreground font-bold uppercase tracking-tight italic">{s.revenueModel}</p>
+                <div className="mt-6 pt-6 border-t border-border/50 grid grid-cols-2 gap-4 relative z-10">
+                  <div className="space-y-1">
+                    <span className="text-[7px] font-black uppercase tracking-widest text-primary/50">Revenue</span>
+                    <p className="text-[9px] text-foreground font-bold uppercase tracking-tight line-clamp-1">{s.revenueModel}</p>
                   </div>
-                  <div className="space-y-2">
-                    <span className="flex items-center gap-2 text-[8px] font-black uppercase tracking-widest text-primary/60">
-                      <Award className="w-3 h-3" /> Alignment
-                    </span>
-                    <p className="text-[10px] text-foreground font-bold uppercase tracking-tight">{s.compliance}</p>
+                  <div className="space-y-1">
+                    <span className="text-[7px] font-black uppercase tracking-widest text-primary/50">Status</span>
+                    <p className="text-[9px] text-foreground font-bold uppercase tracking-tight line-clamp-1">{s.compliance}</p>
                   </div>
                 </div>
                 
-                <div className="mt-8">
+                <div className="mt-8 relative z-10">
                   <Link 
-                    href={`/contact`}
-                    className="w-full text-center py-4 bg-muted hover:bg-primary hover:text-primary-foreground transition-all rounded-xl text-[10px] font-heading font-black uppercase tracking-widest"
+                    href={`/products/${s.id}`}
+                    className="w-full flex items-center justify-between py-4 px-6 bg-muted hover:bg-primary hover:text-primary-foreground transition-all rounded-2xl text-[10px] font-heading font-black uppercase tracking-widest group-hover:scale-[1.02]"
                   >
-                    Enquire for Projects &rarr;
+                    View Vertical Specs &rarr;
                   </Link>
                 </div>
               </motion.div>

@@ -9,7 +9,17 @@ import Link from "next/link";
 import SectionHeading from "@/components/common/SectionHeading";
 
 export default function TechnologyPage() {
-  const { slug } = useParams();
+  const params = useParams();
+  
+  if (!params || !params.slug) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-background">
+        <div className="w-10 h-10 border-4 border-primary border-t-transparent rounded-full animate-spin" />
+      </div>
+    );
+  }
+
+  const slug = params.slug as string;
   const tech = techStacks.find((t) => t.slug === slug);
 
   if (!tech) {
