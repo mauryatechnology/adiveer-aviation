@@ -19,7 +19,7 @@ export function AboutLegalIdentity() {
               </div>
               <h3 className="font-heading font-black text-2xl text-foreground mb-4">Corporate Info</h3>
               <p className="text-sm text-muted-foreground leading-relaxed font-light mb-8">
-                Adiveer Aviation (OPC) Private Limited is formally registered and compliant with all Indian corporate laws.
+                Adiveer Aviation Private Limited is formally registered and compliant with all Indian corporate laws.
               </p>
               <div className="flex items-center gap-3 p-4 bg-emerald-500/5 border border-emerald-500/20 rounded-xl">
                 <BadgeCheck className="w-5 h-5 text-emerald-500" />

@@ -1,5 +1,5 @@
 export const siteConfig = {
-  name: "Adiveer Aviation (OPC) Private Limited",
+  name: "Adiveer Aviation Private Limited",
   description: "Engineering the future of aerospace, AI, and autonomous systems. India-born. Globally deployable.",
   url: "https://adiveeraviations.com",
   ogImage: "https://adiveeraviations.com/og.jpg",

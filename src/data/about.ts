@@ -5,7 +5,7 @@ export const timeline: TimelineEvent[] = [
   { year: "2020–22", title: "The Vision", desc: "Founder Aditya Veer Shrivastava begins foundational R&D in autonomous drone systems and AI from Bhopal, Madhya Pradesh — driven by India's deep-tech gap in indigenous aerospace." },
   { year: "2022", title: "First Systems", desc: "Early autonomous drone platforms developed for terrain mapping and surveillance use cases. Edge AI integration achieved without cloud dependency." },
   { year: "2023", title: "Scale & Validation", desc: "Expanded to 6 technology verticals. 50+ systems engineered. Defense and infrastructure use cases validated in field conditions." },
-  { year: "2024", title: "Formal Incorporation", desc: "Adiveer Aviation (OPC) Private Limited incorporated under Companies Act, 2013. Registered in Madhya Pradesh. IP strategy and regulatory compliance framework established." },
+  { year: "2024", title: "Formal Incorporation", desc: "Adiveer Aviation Private Limited incorporated under Companies Act, 2013. Registered in Madhya Pradesh. IP strategy and regulatory compliance framework established." },
   { year: "2025–26", title: "Growth Stage", desc: "First institutional partnerships, government program participation, and international market development. Pathway to Pvt. Ltd. conversion initiated." },
 ];
 
@@ -46,8 +46,8 @@ export const solutionsList = [
 ];
 
 export const legalIdentity = [
-  { field: "Legal Name", detail: "Adiveer Aviation (OPC) Private Limited" },
-  { field: "Corporate Type", detail: "One Person Company (OPC) under Companies Act, 2013" },
+  { field: "Legal Name", detail: "Adiveer Aviation Private Limited" },
+  { field: "Corporate Type", detail: "Private Limited Company under Companies Act, 2013" },
   { field: "CIN", detail: "[To be updated upon allotment by ROC, Madhya Pradesh]" },
   { field: "Registered State", detail: "Madhya Pradesh, India" },
   { field: "Registered Office", detail: "1, Adi Parisar, Bagsewaniya, Bhopal, Madhya Pradesh 462026" },
