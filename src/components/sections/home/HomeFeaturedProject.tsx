@@ -70,8 +70,8 @@ export function HomeFeaturedProject() {
               transition={{ delay: 0.6 }}
             >
               <MagneticButton>
-                <Link href="/work" className="inline-flex items-center gap-3 px-8 py-4 bg-primary text-primary-foreground font-heading font-black uppercase tracking-wider rounded-xl hover:bg-primary/90 transition-all group shadow-xl shadow-primary/20">
-                  Project Details <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+                <Link href={`/work/${project.slug}`} className="inline-flex items-center gap-3 px-8 py-4 bg-primary text-primary-foreground font-heading font-black uppercase tracking-wider rounded-xl hover:bg-primary/90 transition-all group shadow-xl shadow-primary/20">
+                  Explore Case Study <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
                 </Link>
               </MagneticButton>
             </motion.div>

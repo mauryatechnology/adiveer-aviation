@@ -22,13 +22,15 @@ export const heroStats = [
 ];
 
 export const featuredProject = {
-  name: "Project Aether",
+  id: "v-8-surveillance",
+  slug: "v-8-surveillance",
+  name: "V-8 Long Range Surveillance",
   category: "Aerospace",
-  desc: "A high-altitude autonomous surveillance drone for border monitoring, designed for extreme durability and real-time AI processing at the edge.",
-  tech: "Custom carbon-fiber frame · Solar-hybrid power · Edge AI · Encrypted MAVLink communication",
+  desc: "The V-8 is an advanced autonomous aerial platform designed for persistent, long-range surveillance in extreme environments. Built for scalability and reliability, it enables round-the-clock monitoring of critical borders with minimal human intervention.",
+  tech: "Carbon Fiber Composites · Edge AI · Thermal Imaging · LTE-M Integration",
   metrics: [
-    { value: "500+", label: "Terrain Monitored (KM)" },
-    { value: "72", unit: "h", label: "Continuous Flight" }
+    { value: "500", label: "KM Territory Monitored" },
+    { value: "24", unit: "h", label: "Flight Endurance" }
   ]
 };
 

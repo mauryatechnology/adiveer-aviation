@@ -1,44 +1,61 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Plane, Brain, Bot, Shield, Leaf, Cog } from "lucide-react";
+import Link from "next/link";
 import SectionHeading from "@/components/common/SectionHeading";
 import StaggerContainer, { staggerItem } from "@/components/animations/StaggerContainer";
-
 import { services } from "@/data/services";
 
-const verticals = services.slice(0, 6);
-
 export function HomeVerticals() {
+  const verticals = services.slice(0, 6);
+  
   return (
     <section className="py-24 bg-card relative overflow-hidden">
       <div className="container mx-auto px-6 relative z-10">
         <SectionHeading 
           tag="What We Do" 
-          title="Six Technology Verticals" 
-          description="Integrated capabilities across aerospace, AI, robotics, defense, environment, and manufacturing." 
+          title="Engineered Domain Excellence" 
+          description="Integrated capabilities across aerospace, AI, robotics, defense, and environmental technology." 
         />
-        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" stagger={0.12}>
-          {verticals.map((v) => (
-            <motion.div
-              key={v.title}
-              variants={staggerItem}
-              whileHover={{ y: -8, transition: { type: "spring", stiffness: 300 } }}
-              className="p-8 bg-background rounded-2xl border border-border/50 shadow-sm hover:shadow-xl hover:border-primary/30 transition-all duration-300 group cursor-pointer"
-            >
+        <StaggerContainer className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8" stagger={0.12}>
+          {services.map((v) => (
+            <Link key={v.title} href={`/products/${v.slug}`}>
               <motion.div
-                className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors"
-                initial={{ rotate: 0 }}
-                whileHover={{ rotate: [0, -10, 10, 0] }}
-                transition={{ duration: 0.5 }}
+                variants={staggerItem}
+                whileHover={{ y: -8, transition: { type: "spring", stiffness: 300 } }}
+                className="p-5 md:p-8 bg-background rounded-2xl border border-border/50 shadow-sm hover:shadow-xl hover:border-primary/30 transition-all duration-300 group h-full flex flex-col"
               >
-                <v.icon className="w-7 h-7 text-primary" />
+                <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary transition-colors duration-500">
+                  <v.icon className="w-6 h-6 md:w-7 md:h-7 text-primary group-hover:text-primary-foreground transition-colors duration-500" />
+                </div>
+                <h3 className="font-heading font-bold text-lg md:text-xl text-foreground mb-3 group-hover:text-primary transition-colors tracking-tight line-clamp-1">{v.title}</h3>
+                <p className="text-muted-foreground leading-relaxed text-[13px] md:text-sm font-light line-clamp-3 mb-6">
+                  {v.desc}
+                </p>
+                
+                <div className="mt-auto pt-4 border-t border-border/10 flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-primary/40 group-hover:text-primary transition-colors">
+                  Details &rarr;
+                </div>
               </motion.div>
-              <h3 className="font-heading font-bold text-xl text-foreground mb-3 group-hover:text-primary transition-colors">{v.title}</h3>
-              <p className="text-muted-foreground leading-relaxed text-sm md:text-base">{v.desc}</p>
-            </motion.div>
+            </Link>
           ))}
         </StaggerContainer>
+
+        {/* Dynamic CTA */}
+        <motion.div
+           initial={{ opacity: 0, y: 20 }}
+           whileInView={{ opacity: 1, y: 0 }}
+           viewport={{ once: true }}
+           transition={{ delay: 0.5 }}
+           className="mt-16 text-center"
+        >
+          <Link 
+            href="/products"
+            className="inline-flex items-center gap-2 text-xs font-heading font-black uppercase tracking-[0.3em] text-primary hover:text-foreground transition-all group"
+          >
+            Explore All Solutions <div className="w-12 h-px bg-primary/30 group-hover:w-16 group-hover:bg-primary transition-all ml-2" />
+          </Link>
+        </motion.div>
       </div>
     </section>
   );
