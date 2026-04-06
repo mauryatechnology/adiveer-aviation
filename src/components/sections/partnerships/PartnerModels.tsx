@@ -20,7 +20,7 @@ export function PartnerModels() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ delay: i * 0.05, duration: 0.6, type: "spring", damping: 25, stiffness: 120 }}
-              className="bg-background rounded-3xl p-10 border border-border/60 hover:border-primary/20 transition-all duration-300 group shadow-sm hover:shadow-xl"
+              className="bg-background rounded-3xl p-10 border border-border/60 hover:border-primary/20 transition-colors duration-300 group shadow-sm hover:shadow-xl"
             >
               <div className="flex flex-col gap-4">
                 <span className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 group-hover:text-primary transition-colors">Model 0{i + 1}</span>

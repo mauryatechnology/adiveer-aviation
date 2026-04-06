@@ -18,7 +18,7 @@ export function CareerRoleList() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ delay: i * 0.05, type: "spring", damping: 25, stiffness: 120 }}
-              className="bg-card rounded-2xl p-8 border border-border/60 hover:border-primary/30 hover:shadow-xl transition-all duration-300 flex flex-col md:flex-row md:items-center justify-between gap-6 cursor-pointer group"
+              className="bg-card rounded-2xl p-8 border border-border/60 hover:border-primary/30 hover:shadow-xl transition-colors duration-300 flex flex-col md:flex-row md:items-center justify-between gap-6 cursor-pointer group"
             >
               <div className="flex-1">
                 <div className="flex items-center gap-3 mb-2">

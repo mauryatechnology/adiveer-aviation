@@ -15,7 +15,7 @@ export function AboutVisionMission() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="p-10 bg-background rounded-3xl border border-border/60 shadow-xl hover:border-primary/20 transition-all duration-300 relative overflow-hidden group"
+            className="p-10 bg-background rounded-3xl border border-border/60 shadow-xl hover:border-primary/20 transition-colors duration-300 relative overflow-hidden group"
           >
             <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
               <Eye className="w-24 h-24 text-primary" />
@@ -31,7 +31,7 @@ export function AboutVisionMission() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.15 }}
-            className="p-10 bg-background rounded-3xl border border-border/60 shadow-xl hover:border-primary/20 transition-all duration-300 relative overflow-hidden group"
+            className="p-10 bg-background rounded-3xl border border-border/60 shadow-xl hover:border-primary/20 transition-colors duration-300 relative overflow-hidden group"
           >
             <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
               <Target className="w-24 h-24 text-primary" />

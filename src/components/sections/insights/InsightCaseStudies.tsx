@@ -18,7 +18,7 @@ export function InsightCaseStudies() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="bg-background rounded-3xl p-10 border border-border/60 hover:border-primary/30 shadow-sm hover:shadow-2xl transition-all duration-300"
+              className="bg-background rounded-3xl p-10 border border-border/60 hover:border-primary/30 shadow-sm hover:shadow-2xl transition-colors duration-300"
             >
               <div className="flex flex-col gap-6">
                 <div className="flex items-center gap-3">

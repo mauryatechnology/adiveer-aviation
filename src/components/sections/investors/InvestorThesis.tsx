@@ -19,7 +19,7 @@ export function InvestorThesis() {
             <motion.div
               key={item.id}
               variants={staggerItem}
-              className="p-8 bg-card rounded-3xl border border-border/50 hover:border-primary/30 shadow-sm hover:shadow-xl transition-all group"
+              className="p-8 bg-card rounded-3xl border border-border/50 hover:border-primary/30 shadow-sm hover:shadow-xl transition-colors group"
             >
               <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
                 <item.icon className="w-6 h-6 text-primary group-hover:text-primary-foreground transition-colors" />

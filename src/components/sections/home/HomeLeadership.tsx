@@ -27,7 +27,7 @@ export function HomeLeadership() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, type: "spring", damping: 20 }}
-            className="grid lg:grid-cols-2 gap-12 items-center bg-card/30 border border-border/60 rounded-[3rem] p-8 md:p-16 backdrop-blur-sm hover:shadow-2xl hover:border-primary/20 transition-all group"
+            className="grid lg:grid-cols-2 gap-12 items-center bg-card/30 border border-border/60 rounded-[3rem] p-8 md:p-16 backdrop-blur-sm hover:shadow-2xl hover:border-primary/20 transition-colors group"
           >
             {/* Image Column */}
             <div className="relative aspect-square max-w-md mx-auto lg:mx-0 w-full overflow-hidden rounded-[2.5rem] shadow-2xl shadow-primary/10">

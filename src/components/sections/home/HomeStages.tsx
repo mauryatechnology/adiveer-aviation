@@ -26,7 +26,7 @@ export function HomeStages() {
             <motion.div
               key={stage.id}
               variants={staggerItem}
-              className="relative p-10 bg-card rounded-[2.5rem] border border-border shadow-sm group hover:border-primary/30 hover:shadow-xl transition-all duration-500"
+              className="relative p-10 bg-card rounded-[2.5rem] border border-border shadow-sm group hover:border-primary/30 hover:shadow-xl transition-colors duration-500"
             >
               {/* Connector Ring for large screens */}
               <div className="absolute -right-4 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-background border-2 border-primary/20 z-20 items-center justify-center hidden lg:flex group-last:hidden">

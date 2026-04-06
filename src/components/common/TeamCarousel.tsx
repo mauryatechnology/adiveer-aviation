@@ -57,7 +57,7 @@ export function TeamCarousel({ members }: TeamCarouselProps) {
                   damping: 25,
                   stiffness: 120
                 }}
-                className="bg-card rounded-3xl p-10 border border-border/60 hover:border-primary/30 hover:shadow-2xl transition-all duration-500 group text-center flex flex-col h-full"
+                className="bg-card rounded-3xl p-10 border border-border/60 hover:border-primary/30 hover:shadow-2xl transition-colors duration-500 group text-center flex flex-col h-full"
               >
                 <div className="relative w-32 h-32 mx-auto mb-8 flex-shrink-0">
                   <div className="absolute inset-0 bg-primary/10 rounded-full group-hover:scale-110 transition-transform duration-500" />

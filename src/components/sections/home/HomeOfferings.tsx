@@ -25,7 +25,7 @@ export function HomeOfferings() {
                 <motion.div
                   variants={staggerItem}
                   whileHover={{ scale: 1.05, transition: { type: "spring", stiffness: 300 } }}
-                  className="p-8 bg-card rounded-2xl border border-border/60 shadow-sm hover:shadow-xl hover:border-primary/20 transition-all duration-400 group h-full"
+                  className="p-8 bg-card rounded-2xl border border-border/60 shadow-sm hover:shadow-xl hover:border-primary/20 transition-colors duration-400 group h-full"
                 >
                   <div className="flex flex-col gap-4 h-full">
                     <motion.span
@@ -39,7 +39,7 @@ export function HomeOfferings() {
                       <p className="text-muted-foreground leading-relaxed text-sm md:text-base font-light">{o.desc}</p>
                     </div>
                     <div className="mt-6 pt-4 border-t border-border/10 flex justify-end">
-                      <div className="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-primary border border-primary/20 px-4 py-2 rounded-xl group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
+                      <div className="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-primary border border-primary/20 px-4 py-2 rounded-xl group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
                         Learn More <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1" />
                       </div>
                     </div>

@@ -28,7 +28,7 @@ export function HomeFeaturedProject() {
             <motion.div
               key={project.id}
               variants={staggerItem}
-              className="bg-background rounded-3xl border border-border/60 hover:border-primary/40 hover:shadow-2xl transition-all duration-500 group flex flex-col h-full overflow-hidden"
+              className="bg-background rounded-3xl border border-border/60 hover:border-primary/40 hover:shadow-2xl transition-colors duration-500 group flex flex-col h-full overflow-hidden"
             >
               <div className="p-8 pb-4 flex-1">
                 <div className="flex items-center justify-between mb-6">

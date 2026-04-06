@@ -17,7 +17,7 @@ export function AboutCoreValues() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="p-8 bg-card rounded-2xl border border-border/60 hover:border-primary/30 hover:shadow-2xl transition-all duration-300 group"
+              className="p-8 bg-card rounded-2xl border border-border/60 hover:border-primary/30 hover:shadow-2xl transition-colors duration-300 group"
             >
               <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-300">
                 <v.icon className="w-6 h-6 text-primary group-hover:text-primary-foreground transition-colors duration-300" />

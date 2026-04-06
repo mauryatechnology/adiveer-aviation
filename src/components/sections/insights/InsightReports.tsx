@@ -18,7 +18,7 @@ export function InsightReports() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="bg-card rounded-3xl p-8 border border-border/60 hover:border-primary/30 hover:shadow-2xl transition-all duration-300 flex items-start gap-6 cursor-pointer group"
+              className="bg-card rounded-3xl p-8 border border-border/60 hover:border-primary/30 hover:shadow-2xl transition-colors duration-300 flex items-start gap-6 cursor-pointer group"
             >
               <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary transition-colors duration-300 shadow-inner">
                 <FileText className="w-8 h-8 text-primary group-hover:text-white transition-colors" />

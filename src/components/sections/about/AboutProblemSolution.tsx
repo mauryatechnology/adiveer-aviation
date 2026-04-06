@@ -30,7 +30,7 @@ export function AboutProblemSolution() {
             </h3>
             <div className="space-y-6">
               {solutionsList.map((s, i) => (
-                <div key={i} className="flex gap-4 p-5 bg-primary-foreground/10 border border-primary-foreground/20 rounded-xl group hover:bg-primary-foreground transition-all duration-300">
+                <div key={i} className="flex gap-4 p-5 bg-primary-foreground/10 border border-primary-foreground/20 rounded-xl group hover:bg-primary-foreground transition-colors duration-300">
                   <span className="text-primary-foreground font-heading font-bold text-lg mt-0.5 group-hover:text-primary transition-colors">{String(i + 1).padStart(2, '0')}</span>
                   <p className="text-base text-primary-foreground/90 leading-relaxed group-hover:text-primary transition-colors font-medium">{s}</p>
                 </div>

@@ -114,14 +114,14 @@ export function HomeHero() {
             className="flex flex-wrap items-center gap-6"
           >
             <MagneticButton className="inline-block">
-              <Link href="/products" className="px-10 py-5 bg-primary text-primary-foreground font-heading font-black uppercase tracking-widest text-xs rounded-2xl hover:scale-105 transition-all inline-flex items-center gap-3 group shadow-2xl shadow-primary/30">
+              <Link href="/products" className="px-10 py-5 bg-primary text-primary-foreground font-heading font-black uppercase tracking-widest text-xs rounded-2xl hover:scale-105 transition-transform transition-shadow duration-300 inline-flex items-center gap-3 group shadow-2xl shadow-primary/30">
                 Explore Our Tech
                 <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
               </Link>
             </MagneticButton>
             <MagneticButton className="inline-block">
-              <Link href="/about" className="px-10 py-4 border border-primary/30 text-primary font-heading font-black uppercase tracking-widest text-xs rounded-2xl hover:bg-primary/5 transition-all backdrop-blur-sm group inline-flex items-center gap-2">
-                Our Story <div className="p-1.5 rounded-full bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all">
+              <Link href="/about" className="px-10 py-4 border border-primary/30 text-primary font-heading font-black uppercase tracking-widest text-xs rounded-2xl hover:bg-primary/5 transition-colors duration-300 backdrop-blur-sm group inline-flex items-center gap-2">
+                Our Story <div className="p-1.5 rounded-full bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
                   <ArrowRight className="w-4 h-4 ml-0.5" />
                 </div>
               </Link>

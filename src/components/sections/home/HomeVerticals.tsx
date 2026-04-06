@@ -25,7 +25,7 @@ export function HomeVerticals() {
               <motion.div
                 variants={staggerItem}
                 whileHover={{ y: -8, transition: { type: "spring", stiffness: 300 } }}
-                className="p-5 md:p-8 bg-background rounded-2xl border border-border/50 shadow-sm hover:shadow-xl hover:border-primary/30 transition-all duration-300 group h-full flex flex-col"
+                className="p-5 md:p-8 bg-background rounded-2xl border border-border/50 shadow-sm hover:shadow-xl hover:border-primary/30 transition-colors duration-300 group h-full flex flex-col"
               >
                 <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary transition-colors duration-500">
                   <v.icon className="w-6 h-6 md:w-7 md:h-7 text-primary group-hover:text-primary-foreground transition-colors duration-500" />
@@ -36,7 +36,7 @@ export function HomeVerticals() {
                 </p>
                 
                 <div className="mt-auto pt-4 border-t border-border/10 flex justify-end">
-                  <div className="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-primary border border-primary/20 px-4 py-2 rounded-xl group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
+                  <div className="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-primary border border-primary/20 px-4 py-2 rounded-xl group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
                     Details <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1" />
                   </div>
                 </div>

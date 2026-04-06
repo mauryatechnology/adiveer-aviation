@@ -26,7 +26,7 @@ export function InvestorRevenue() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              className="flex gap-6 p-6 md:p-8 bg-card rounded-2xl border border-border/60 hover:bg-muted/50 transition-all border-l-4 border-l-primary"
+              className="flex gap-6 p-6 md:p-8 bg-card rounded-2xl border border-border/60 hover:bg-muted/50 transition-colors border-l-4 border-l-primary"
             >
               <div className="flex-1">
                 <h4 className="text-lg font-heading font-black text-foreground mb-2">{s.stream}</h4>

@@ -14,7 +14,7 @@ export function TeamJoinCTA() {
       <p className="text-primary-foreground/80 text-xl font-light mb-10 max-w-2xl mx-auto">
         We&apos;re looking for the best deep-tech talent in India. High stress, planetary impact, engineer-first environment.
       </p>
-      <button className="px-10 py-5 bg-white text-primary font-heading font-black uppercase tracking-widest text-xs rounded-2xl hover:bg-primary-foreground/90 transition-all shadow-xl">
+      <button className="px-10 py-5 bg-white text-primary font-heading font-black uppercase tracking-widest text-xs rounded-2xl hover:bg-primary-foreground/90 transition-colors shadow-xl">
         Join the Hangar
       </button>
     </motion.div>

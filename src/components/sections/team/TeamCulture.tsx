@@ -21,7 +21,7 @@ export function TeamCulture() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ delay: i * 0.1, type: "spring", damping: 20, stiffness: 150 }}
-              className="p-6 bg-card rounded-2xl border border-border/60 hover:bg-primary/5 hover:border-primary/20 hover:shadow-lg transition-all duration-300 group"
+              className="p-6 bg-card rounded-2xl border border-border/60 hover:bg-primary/5 hover:border-primary/20 hover:shadow-lg transition-colors duration-300 group"
             >
               <span className="text-[10px] font-heading font-black uppercase tracking-[0.15em] text-foreground group-hover:text-primary transition-colors">{item}</span>
             </motion.div>

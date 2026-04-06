@@ -18,7 +18,7 @@ export function InsightBlog() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.05 }}
-              className="bg-card rounded-2xl p-8 border border-border/60 hover:border-primary/20 hover:shadow-xl transition-all duration-300 group cursor-pointer flex flex-col h-full"
+              className="bg-card rounded-2xl p-8 border border-border/60 hover:border-primary/20 hover:shadow-xl transition-colors duration-300 group cursor-pointer flex flex-col h-full"
             >
               <div className="flex items-center justify-between mb-6">
                 <span className="px-2 py-0.5 bg-primary/10 text-primary text-[9px] font-black uppercase tracking-widest rounded">{b.tag}</span>

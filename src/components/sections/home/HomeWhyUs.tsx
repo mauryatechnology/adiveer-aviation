@@ -24,7 +24,7 @@ export function HomeWhyUs() {
               key={w.title}
               variants={staggerItem}
               whileHover={{ x: 10, transition: { type: "spring", stiffness: 300 } }}
-              className="flex gap-6 p-8 bg-background rounded-2xl border border-border/60 shadow-sm hover:shadow-xl hover:border-primary/30 transition-all duration-300 group"
+              className="flex gap-6 p-8 bg-background rounded-2xl border border-border/60 shadow-sm hover:shadow-xl hover:border-primary/30 transition-colors duration-300 group"
             >
               <motion.div
                 className="flex-shrink-0 w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary shadow-inner transition-colors duration-300"

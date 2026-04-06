@@ -19,7 +19,7 @@ export function PartnerIndustries() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ delay: i * 0.1, duration: 0.6, type: "spring", damping: 30, stiffness: 100 }}
-              className="bg-card rounded-3xl p-10 border border-border/60 hover:border-primary/30 hover:shadow-2xl transition-all duration-500 group flex flex-col items-center text-center"
+              className="bg-card rounded-3xl p-10 border border-border/60 hover:border-primary/30 hover:shadow-2xl transition-colors duration-500 group flex flex-col items-center text-center"
             >
               <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-8 group-hover:bg-primary transition-colors duration-500 shadow-inner">
                 {ind.icon && <ind.icon className="w-8 h-8 text-primary group-hover:text-white transition-colors" />}

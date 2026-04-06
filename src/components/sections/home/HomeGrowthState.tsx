@@ -29,7 +29,7 @@ export function HomeGrowthState() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1 }}
-                  className="flex items-center justify-between p-4 bg-background border border-border rounded-2xl group hover:border-primary/30 transition-all"
+                  className="flex items-center justify-between p-4 bg-background border border-border rounded-2xl group hover:border-primary/30 transition-colors"
                 >
                   <div className="flex items-center gap-4">
                     {item.status === "Done" ? (

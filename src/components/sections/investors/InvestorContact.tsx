@@ -31,7 +31,7 @@ export function InvestorContact() {
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-4 px-10 py-5 bg-white text-primary font-heading font-black uppercase tracking-widest text-xs rounded-2xl hover:bg-primary-foreground transition-all group shadow-2xl shadow-black/20"
+              className="inline-flex items-center gap-4 px-10 py-5 bg-white text-primary font-heading font-black uppercase tracking-widest text-xs rounded-2xl hover:bg-primary-foreground transition-colors group shadow-2xl shadow-black/20"
             >
               Schedule Introduction <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
             </Link>
@@ -45,10 +45,10 @@ export function InvestorContact() {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ delay: idx * 0.1 }}
                 viewport={{ once: true }}
-                className="p-8 bg-white/5 backdrop-blur-md border border-white/10 rounded-[2.5rem] hover:bg-white/10 transition-all group cursor-default"
+                className="p-8 bg-white/5 backdrop-blur-md border border-white/10 rounded-[2.5rem] hover:bg-white/10 transition-colors group cursor-default"
               >
                 <div className="flex items-center gap-6">
-                  <div className="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center group-hover:bg-white group-hover:text-primary transition-all duration-500 shadow-inner">
+                  <div className="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center group-hover:bg-white group-hover:text-primary transition-colors duration-500 shadow-inner">
                     {idx === 0 && <Mail className="w-6 h-6 text-white group-hover:text-primary transition-colors" />}
                     {idx === 1 && <User className="w-6 h-6 text-white group-hover:text-primary transition-colors" />}
                     {idx === 2 && <MapPin className="w-6 h-6 text-white group-hover:text-primary transition-colors" />}
