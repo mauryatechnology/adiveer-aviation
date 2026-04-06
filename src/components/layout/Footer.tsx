@@ -30,18 +30,18 @@ export function Footer() {
           {/* Brand & Address */}
           <motion.div custom={0} variants={footerFade} className="col-span-full lg:col-span-2">
             <div className="flex items-center gap-3 mb-6">
-              <Image 
-                src={logo} 
-                alt={siteConfig.name} 
-                width={40} 
-                height={40} 
-                className="h-10 w-10 rounded-md object-cover shadow-sm" 
+              <Image
+                src={logo}
+                alt={siteConfig.name}
+                width={40}
+                height={40}
+                className="h-10 w-10 rounded-md object-cover shadow-sm"
               />
               <span className="font-heading font-bold text-lg tracking-tight text-foreground leading-tight">
                 {siteConfig.name}
               </span>
             </div>
-            
+
             <div className="space-y-4">
               <p className="text-muted-foreground text-sm font-medium italic">
                 Engineering the future of aerospace, AI, and autonomous systems. India-born. Globally deployable.

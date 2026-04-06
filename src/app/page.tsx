@@ -5,6 +5,7 @@ import { HomeOfferings } from "@/components/sections/home/HomeOfferings";
 import { HomeStages } from "@/components/sections/home/HomeStages";
 import { HomeWhyUs } from "@/components/sections/home/HomeWhyUs";
 import { HomeFeaturedProject } from "@/components/sections/home/HomeFeaturedProject";
+import { HomeLeadership } from "@/components/sections/home/HomeLeadership";
 import { HomeCTA } from "@/components/sections/home/HomeCTA";
 
 export default function HomePage() {
@@ -17,6 +18,7 @@ export default function HomePage() {
       <HomeStages />
       <HomeWhyUs />
       <HomeFeaturedProject />
+      <HomeLeadership />
       <HomeCTA />
     </div>
   );
