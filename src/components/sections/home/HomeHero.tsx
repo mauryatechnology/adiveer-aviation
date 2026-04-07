@@ -130,7 +130,7 @@ export function HomeHero() {
         </div>
 
         {/* Stats Section */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.6, duration: 0.8 }}
@@ -148,7 +148,7 @@ export function HomeHero() {
               <div className="text-sm text-muted-foreground mt-1 font-medium">{stat.label}</div>
             </motion.div>
           ))}
-        </motion.div>
+        </motion.div> */}
       </motion.div>
     </section>
   );
